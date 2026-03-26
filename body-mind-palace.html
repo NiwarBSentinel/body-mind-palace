@@ -3,1547 +3,1488 @@
 #bmp-app *{box-sizing:border-box;}
 
 #bmp-app{
-
   font-family:Lora,Georgia,serif;
-
   background:#f5f4f0;
-
   color:#1a1917;
-
   padding:0 0 60px;
-
   max-width:none!important;
-
   width:100%;
-
 }
 
 /* ── Header ── */
-
 #bmp-app .bmp-hdr{
-
   background:#f5f4f0;
-
   border-bottom:1px solid rgba(0,0,0,0.10);
-
   padding:32px 32px 26px;
-
 }
-
-#bmp-app .bmp-hdr-in{max-width:1400px;margin:0 auto;}
-
+#bmp-app .bmp-hdr-in{max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 #bmp-app h1{
-
   font-family:Gloock,Georgia,serif;
-
-  font-size:28px;
-
-  font-weight:400;
-
-  color:#1a1917;
-
-  margin:0 0 6px;
-
+  font-size:28px;font-weight:400;
+  color:#1a1917;margin:0 0 6px;
 }
-
 #bmp-app .subtitle{
-
-  font-size:13px;
-
-  color:#6b6560;
-
-  margin:0;
-
-  font-style:italic;
-
-  letter-spacing:0.02em;
-
+  font-size:13px;color:#6b6560;
+  margin:0;font-style:italic;letter-spacing:0.02em;
+}
+#bmp-app .kbd-hint{
+  font-size:11px;color:#a07840;font-family:system-ui,sans-serif;
+  background:rgba(160,120,64,0.08);border:1px solid rgba(160,120,64,0.20);
+  border-radius:5px;padding:6px 12px;white-space:nowrap;
+}
+#bmp-app .kbd-hint kbd{
+  background:rgba(160,120,64,0.15);border-radius:3px;
+  padding:1px 5px;font-size:10px;font-family:monospace;
 }
 
 /* ── Body container ── */
-
 #bmp-app .bmp-body{max-width:1400px;margin:0 auto;padding:24px 32px 0;}
 
 /* ── Person Bar ── */
-
 #bmp-app .person-bar{
-
-  display:flex;
-
-  align-items:flex-end;
-
-  gap:16px;
-
-  padding:18px 22px;
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.10);
-
-  border-radius:8px;
-
-  margin-bottom:12px;
-
-  flex-wrap:wrap;
-
+  display:flex;align-items:flex-end;gap:16px;
+  padding:18px 22px;background:#ffffff;
+  border:1px solid rgba(0,0,0,0.10);border-radius:8px;
+  margin-bottom:12px;flex-wrap:wrap;
 }
-
 #bmp-app .person-field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:150px;}
-
 #bmp-app .person-field label{
-
-  font-size:10px;
-
-  font-weight:700;
-
-  letter-spacing:0.1em;
-
-  text-transform:uppercase;
-
-  color:#6b6560;
-
-  font-family:system-ui,sans-serif;
-
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#6b6560;font-family:system-ui,sans-serif;
 }
-
 #bmp-app .person-field input{
-
-  background:#f0eeea;
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:5px;
-
-  padding:8px 12px;
-
-  font-size:14px;
-
-  color:#1a1917;
-
-  font-family:Lora,Georgia,serif;
-
-  outline:none;
-
-  transition:border-color 0.2s;
-
+  background:#f0eeea;border:1px solid rgba(0,0,0,0.12);
+  border-radius:5px;padding:8px 12px;font-size:14px;
+  color:#1a1917;font-family:Lora,Georgia,serif;
+  outline:none;transition:border-color 0.2s;
 }
-
 #bmp-app .person-field input:focus{border-color:#a07840;}
-
-#bmp-app .export-bar{display:flex;gap:8px;align-items:center;}
-
+#bmp-app .export-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 #bmp-app .exp-btn{
-
-  padding:8px 16px;
-
-  background:transparent;
-
-  border:1px solid rgba(160,120,64,0.45);
-
-  border-radius:5px;
-
-  color:#a07840;
-
-  font-size:12px;
-
-  font-family:system-ui,sans-serif;
-
-  letter-spacing:0.04em;
-
-  cursor:pointer;
-
-  transition:all 0.2s;
-
-  white-space:nowrap;
-
+  padding:8px 16px;background:transparent;
+  border:1px solid rgba(160,120,64,0.45);border-radius:5px;
+  color:#a07840;font-size:12px;font-family:system-ui,sans-serif;
+  letter-spacing:0.04em;cursor:pointer;transition:all 0.2s;white-space:nowrap;
 }
-
 #bmp-app .exp-btn:hover{background:rgba(160,120,64,0.12);border-color:#a07840;}
+#bmp-app .exp-btn.drill-btn{
+  background:rgba(160,120,64,0.15);border-color:#a07840;
+  font-weight:700;letter-spacing:0.06em;
+}
+#bmp-app .exp-btn.drill-btn:hover{background:rgba(160,120,64,0.28);}
 
 /* ── Person Chips ── */
-
 #bmp-app .person-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
-
 #bmp-app .pchip{
-
-  padding:5px 14px;
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:20px;
-
-  color:#857e79;
-
-  font-size:12px;
-
-  font-family:system-ui,sans-serif;
-
-  cursor:pointer;
-
-  transition:all 0.2s;
-
+  padding:5px 14px;background:#ffffff;
+  border:1px solid rgba(0,0,0,0.12);border-radius:20px;
+  color:#857e79;font-size:12px;font-family:system-ui,sans-serif;
+  cursor:pointer;transition:all 0.2s;
 }
-
-#bmp-app .pchip:hover,
-
-#bmp-app .pchip.active{
-
-  background:rgba(160,120,64,0.15);
-
-  border-color:#a07840;
-
-  color:#a07840;
-
+#bmp-app .pchip:hover,#bmp-app .pchip.active{
+  background:rgba(160,120,64,0.15);border-color:#a07840;color:#a07840;
 }
 
 /* ── Room Tabs ── */
-
 #bmp-app .room-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
-
 #bmp-app .rtab{
-
-  padding:8px 16px;
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.10);
-
-  border-radius:6px;
-
-  color:#857e79;
-
-  font-size:12px;
-
-  font-family:system-ui,sans-serif;
-
-  cursor:pointer;
-
-  transition:all 0.2s;
-
-  display:flex;flex-direction:column;align-items:center;
-
-  gap:2px;
-
+  padding:8px 16px;background:#ffffff;
+  border:1px solid rgba(0,0,0,0.10);border-radius:6px;
+  color:#857e79;font-size:12px;font-family:system-ui,sans-serif;
+  cursor:pointer;transition:all 0.2s;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  position:relative;
 }
-
 #bmp-app .rtab:hover{border-color:rgba(160,120,64,0.45);color:#1a1917;}
-
 #bmp-app .rtab.on{
-
-  background:rgba(160,120,64,0.12);
-
-  border-color:#a07840;
-
-  color:#a07840;
-
+  background:rgba(160,120,64,0.12);border-color:#a07840;color:#a07840;
 }
-
 #bmp-app .rtab-name{font-weight:600;font-size:12px;}
-
 #bmp-app .rtab-body{font-size:10px;opacity:0.7;font-style:italic;}
+#bmp-app .rtab-progress{
+  width:100%;height:3px;background:rgba(0,0,0,0.08);
+  border-radius:2px;margin-top:4px;overflow:hidden;
+}
+#bmp-app .rtab-progress-fill{
+  height:100%;background:#a07840;border-radius:2px;
+  transition:width 0.4s ease;
+}
 
 /* ── Layout ── */
-
 #bmp-app .layout{
-
-  display:grid;
-
-  grid-template-columns:320px 1fr;
-
-  gap:20px;
-
-  align-items:start;
-
+  display:grid;grid-template-columns:320px 1fr;
+  gap:20px;align-items:start;
 }
-
-@media(max-width:860px){
-
-  #bmp-app .layout{grid-template-columns:1fr;}
-
-}
+@media(max-width:860px){#bmp-app .layout{grid-template-columns:1fr;}}
 
 /* ── Loci Column ── */
-
 #bmp-app .loci-col{display:flex;flex-direction:column;gap:5px;}
-
 #bmp-app .lc{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:11px;
-
-  padding:9px 13px;
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.08);
-
-  border-radius:6px;
-
-  cursor:pointer;
-
-  transition:all 0.18s;
-
+  display:flex;align-items:center;gap:11px;
+  padding:9px 13px;background:#ffffff;
+  border:1px solid rgba(0,0,0,0.08);border-radius:6px;
+  cursor:pointer;transition:all 0.18s;position:relative;overflow:hidden;
 }
-
 #bmp-app .lc:hover{background:#f0eeea;border-color:rgba(160,120,64,0.30);}
-
 #bmp-app .lc.sel{
-
-  background:rgba(160,120,64,0.10);
-
-  border-color:rgba(160,120,64,0.55);
-
+  background:rgba(160,120,64,0.10);border-color:rgba(160,120,64,0.55);
 }
-
+#bmp-app .lc-progress-bar{
+  position:absolute;bottom:0;left:0;height:2px;
+  transition:width 0.3s ease;border-radius:0 2px 0 0;
+}
 #bmp-app .lc-num{
-
-  width:26px;height:26px;
-
-  border-radius:50%;
-
+  width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-
-  font-size:11px;font-weight:700;
-
-  font-family:system-ui,sans-serif;
-
-  flex-shrink:0;
-
+  font-size:11px;font-weight:700;font-family:system-ui,sans-serif;flex-shrink:0;
 }
-
 #bmp-app .lc-info{flex:1;min-width:0;}
-
 #bmp-app .lc-name{
-
-  font-size:13px;font-weight:600;
-
-  color:#1a1917;margin:0 0 2px;
-
+  font-size:13px;font-weight:600;color:#1a1917;margin:0 0 2px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-
   font-family:system-ui,sans-serif;
-
 }
-
 #bmp-app .lc-pos{font-size:11px;color:#6b6560;font-style:italic;font-family:Lora,Georgia,serif;}
+#bmp-app .lc-score{
+  font-size:11px;font-family:system-ui,sans-serif;
+  font-weight:700;flex-shrink:0;
+}
 
 /* ── Detail Panel ── */
-
 #bmp-app .detail-panel{
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.10);
-
-  border-radius:8px;
-
-  overflow:hidden;
-
-  position:sticky;top:80px;
-
-  min-height:300px;
-
+  background:#ffffff;border:1px solid rgba(0,0,0,0.10);
+  border-radius:8px;overflow:hidden;
+  position:sticky;top:80px;min-height:300px;
 }
-
-/* Image zone (built by JS inside detail-panel) */
-
 #bmp-app .img-zone{
-
-  width:100%;
-
-  position:relative;
-
-  background:#f5f4f0;
-
-  border-bottom:1px solid rgba(0,0,0,0.08);
-
+  width:100%;position:relative;
+  background:#f5f4f0;border-bottom:1px solid rgba(0,0,0,0.08);
 }
-
-#bmp-app .img-zone img{
-
-  width:100%;
-
-  height:auto;
-
-  display:block;
-
-}
-
+#bmp-app .img-zone img{width:100%;height:auto;display:block;}
 #bmp-app .img-msg{
-
   padding:40px;text-align:center;
-
   color:#6b6560;font-style:italic;font-size:13px;
-
   font-family:Lora,Georgia,serif;
-
 }
-
 #bmp-app .next-btn{
-
   position:absolute;bottom:8px;right:8px;
-
-  padding:5px 12px;
-
-  background:rgba(255,255,255,0.85);
-
-  border:1px solid rgba(0,0,0,0.15);
-
-  border-radius:4px;
-
-  color:#1a1917;font-size:11px;
-
-  font-family:system-ui,sans-serif;
-
-  cursor:pointer;
-
+  padding:5px 12px;background:rgba(255,255,255,0.85);
+  border:1px solid rgba(0,0,0,0.15);border-radius:4px;
+  color:#1a1917;font-size:11px;font-family:system-ui,sans-serif;cursor:pointer;
 }
-
 #bmp-app .img-src{display:none;}
-
-/* det-body (content filled by JS) */
-
 #bmp-app .det-body{padding:24px 28px;}
-
 #bmp-app .det-name{
-
-  font-family:Gloock,Georgia,serif;
-
-  font-size:21px;font-weight:400;
-
+  font-family:Gloock,Georgia,serif;font-size:21px;font-weight:400;
   color:#1a1917;margin:0 0 4px;
-
 }
-
 #bmp-app .det-pos{
-
-  font-size:12px;color:#6b6560;
-
-  font-style:italic;margin:0 0 14px;
-
-  font-family:Lora,Georgia,serif;
-
+  font-size:12px;color:#6b6560;font-style:italic;
+  margin:0 0 14px;font-family:Lora,Georgia,serif;
 }
-
 #bmp-app .sense-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;}
-
 #bmp-app .stag{
-
-  padding:3px 10px;
-
-  background:rgba(0,0,0,0.06);
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:12px;
-
-  font-size:11px;color:#857e79;
-
-  font-family:system-ui,sans-serif;
-
+  padding:3px 10px;background:rgba(0,0,0,0.06);
+  border:1px solid rgba(0,0,0,0.12);border-radius:12px;
+  font-size:11px;color:#857e79;font-family:system-ui,sans-serif;
 }
-
 #bmp-app .det-anchor{font-size:14px;color:#1a1917;margin-bottom:12px;line-height:1.6;}
-
 #bmp-app .det-transform{
-
-  font-size:13px;color:#857e79;
-
-  padding:12px 14px;
-
-  background:rgba(160,120,64,0.08);
-
-  border:1px solid rgba(160,120,64,0.20);
-
+  font-size:13px;color:#857e79;padding:12px 14px;
+  background:rgba(160,120,64,0.08);border:1px solid rgba(160,120,64,0.20);
   border-radius:6px;margin-bottom:14px;line-height:1.6;
-
 }
-
 #bmp-app .tl{
-
   display:block;font-size:10px;font-weight:700;
-
   letter-spacing:0.1em;text-transform:uppercase;
-
   color:#a07840;margin-bottom:5px;font-family:system-ui,sans-serif;
-
 }
-
-/* Note section (built by JS) */
-
 #bmp-app .note-section{margin-top:14px;}
-
 #bmp-app .note-section label{
-
   display:block;font-size:10px;font-weight:700;
-
   letter-spacing:0.1em;text-transform:uppercase;
-
   color:#6b6560;margin-bottom:6px;font-family:system-ui,sans-serif;
-
 }
-
 #bmp-app .note-field{
-
-  width:100%;min-height:72px;
-
-  background:#f0eeea;
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:5px;
-
-  padding:9px 12px;
-
-  color:#1a1917;font-size:13px;
-
-  font-family:Lora,Georgia,serif;
-
-  resize:vertical;outline:none;
-
-  transition:border-color 0.2s;
-
+  width:100%;min-height:72px;background:#f0eeea;
+  border:1px solid rgba(0,0,0,0.12);border-radius:5px;
+  padding:9px 12px;color:#1a1917;font-size:13px;
+  font-family:Lora,Georgia,serif;resize:vertical;outline:none;transition:border-color 0.2s;
 }
-
 #bmp-app .note-field:focus{border-color:#a07840;}
-
 #bmp-app .note-save-btn{
-
-  margin-top:7px;padding:6px 14px;
-
-  background:transparent;
-
-  border:1px solid rgba(160,120,64,0.45);
-
-  border-radius:5px;color:#a07840;
-
-  font-size:12px;font-family:system-ui,sans-serif;
-
-  cursor:pointer;transition:all 0.2s;
-
+  margin-top:7px;padding:6px 14px;background:transparent;
+  border:1px solid rgba(160,120,64,0.45);border-radius:5px;
+  color:#a07840;font-size:12px;font-family:system-ui,sans-serif;cursor:pointer;transition:all 0.2s;
 }
-
 #bmp-app .note-save-btn:hover{background:rgba(160,120,64,0.12);}
+#bmp-app .note-saved{font-size:11px;color:#a07840;margin-left:10px;display:none;font-family:system-ui,sans-serif;}
+#bmp-app .note-saved.show{display:inline;}
 
-#bmp-app #noteSaved{
-
-  font-size:11px;color:#a07840;
-
-  margin-left:10px;display:none;
-
-  font-family:system-ui,sans-serif;
-
-}
-
-/* Room Map */
-
+/* ── Room Map ── */
 #bmp-app .room-map{
-
   margin-top:16px;padding:16px;
-
-  background:#f5f4f0;
-
-  border-top:1px solid rgba(0,0,0,0.06);
-
+  background:#f5f4f0;border-top:1px solid rgba(0,0,0,0.06);
 }
-
 #bmp-app .room-map-title{
-
-  font-size:10px;font-weight:700;
-
-  letter-spacing:0.1em;text-transform:uppercase;
-
-  color:#6b6560;margin-bottom:10px;
-
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#6b6560;margin-bottom:10px;
   font-family:system-ui,sans-serif;
-
 }
-
 #bmp-app .map-canvas{
-
   position:relative;width:100%;height:200px;
-
-  background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.08);
-
+  background:#ffffff;border:1px solid rgba(0,0,0,0.08);
   border-radius:6px;overflow:hidden;
-
 }
-
 #bmp-app .map-node{
-
-  position:absolute;
-
-  transform:translate(-50%,-50%);
-
-  cursor:pointer;
-
-  text-align:center;
-
+  position:absolute;transform:translate(-50%,-50%);
+  cursor:pointer;text-align:center;
 }
-
 #bmp-app .map-node-circle{
-
-  width:32px;height:32px;
-
-  border-radius:50%;
-
-  background:rgba(0,0,0,0.08);
-
-  border:1px solid rgba(0,0,0,0.15);
-
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.15);
   display:flex;align-items:center;justify-content:center;
-
-  font-size:11px;font-weight:700;
-
-  color:#857e79;margin:0 auto;
-
-  font-family:system-ui,sans-serif;
-
-  transition:all 0.2s;
-
+  font-size:11px;font-weight:700;color:#857e79;
+  margin:0 auto;font-family:system-ui,sans-serif;transition:all 0.2s;
 }
-
 #bmp-app .map-node.active .map-node-circle{
-
-  background:rgba(160,120,64,0.25);
-
-  border-color:#a07840;color:#a07840;
-
+  background:rgba(160,120,64,0.25);border-color:#a07840;color:#a07840;
 }
-
 #bmp-app .map-node-label{
-
-  font-size:9px;color:#6b6560;
-
-  margin-top:3px;
-
-  font-family:system-ui,sans-serif;
-
-  white-space:nowrap;
-
+  font-size:9px;color:#6b6560;margin-top:3px;
+  font-family:system-ui,sans-serif;white-space:nowrap;
 }
 
-/* Image Edit Overlay */
-
-#bmp-app #imgEditOverlay{
-
+/* ── DRILL MODE ── */
+#bmp-app .drill-overlay{
   display:none;position:fixed;inset:0;
-
-  background:rgba(255,255,255,0.95);
-
-  z-index:9999;align-items:center;justify-content:center;
-
+  background:rgba(26,25,23,0.96);z-index:8000;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;
 }
-
-#bmp-app #imgEditOverlay.open{display:flex;}
-
-#bmp-app .img-edit-modal{
-
-  background:#f0eeea;
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:10px;padding:28px;
-
-  width:420px;max-width:90vw;
-
+#bmp-app .drill-overlay.open{display:flex;}
+#bmp-app .drill-card{
+  background:#1a1917;border:1px solid rgba(255,255,255,0.10);
+  border-radius:16px;width:100%;max-width:640px;
+  overflow:hidden;position:relative;
 }
-
-#bmp-app .img-edit-modal h3{
-
-  font-family:Gloock,Georgia,serif;
-
-  font-size:18px;font-weight:400;
-
-  color:#1a1917;margin:0 0 14px;
-
+#bmp-app .drill-progress-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.08);
 }
-
-#bmp-app #imgEditTitle{font-size:12px;color:#6b6560;margin-bottom:10px;font-style:italic;}
-
-#bmp-app #imgEditUrl{
-
-  width:100%;background:#ffffff;
-
-  border:1px solid rgba(0,0,0,0.12);
-
-  border-radius:5px;padding:9px 12px;
-
-  color:#1a1917;font-size:13px;
-
-  font-family:Lora,Georgia,serif;
-
-  outline:none;margin-bottom:12px;
-
+#bmp-app .drill-counter{
+  font-size:12px;color:rgba(255,255,255,0.45);
+  font-family:system-ui,sans-serif;letter-spacing:0.05em;
 }
-
-#bmp-app #imgEditUrl:focus{border-color:#a07840;}
-
-#bmp-app .img-edit-btns{display:flex;gap:10px;}
-
-#bmp-app .img-edit-btns button{
-
-  flex:1;padding:8px;border-radius:5px;
-
-  font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;transition:all 0.2s;
-
+#bmp-app .drill-room-label{
+  font-size:11px;color:#a07840;font-family:system-ui,sans-serif;
+  letter-spacing:0.08em;text-transform:uppercase;
 }
-
-#bmp-app .btn-save-img{
-
+#bmp-app .drill-close-btn{
+  background:transparent;border:none;color:rgba(255,255,255,0.4);
+  font-size:18px;cursor:pointer;padding:0 4px;line-height:1;
+}
+#bmp-app .drill-close-btn:hover{color:rgba(255,255,255,0.8);}
+#bmp-app .drill-img-wrap{
+  width:100%;height:280px;background:#111;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  position:relative;
+}
+#bmp-app .drill-img-wrap img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+#bmp-app .drill-img-placeholder{
+  color:rgba(255,255,255,0.2);font-size:13px;
+  font-style:italic;font-family:Lora,Georgia,serif;
+}
+#bmp-app .drill-num-badge{
+  position:absolute;top:12px;left:12px;
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;font-family:system-ui,sans-serif;
+  border:1.5px solid;
+}
+#bmp-app .drill-body{padding:22px 24px;}
+#bmp-app .drill-locus-name{
+  font-family:Gloock,Georgia,serif;font-size:22px;font-weight:400;
+  color:#f5f4f0;margin:0 0 6px;
+}
+#bmp-app .drill-locus-pos{
+  font-size:12px;color:rgba(255,255,255,0.4);
+  font-style:italic;font-family:Lora,Georgia,serif;margin-bottom:18px;
+}
+#bmp-app .drill-reveal-btn{
+  width:100%;padding:13px;
   background:rgba(160,120,64,0.20);
-
-  border:1px solid #a07840;color:#a07840;
-
+  border:1px solid rgba(160,120,64,0.50);
+  border-radius:8px;color:#a07840;
+  font-size:14px;font-family:system-ui,sans-serif;
+  letter-spacing:0.05em;cursor:pointer;transition:all 0.2s;
+}
+#bmp-app .drill-reveal-btn:hover{background:rgba(160,120,64,0.35);}
+#bmp-app .drill-content{display:none;}
+#bmp-app .drill-content.open{display:block;}
+#bmp-app .drill-anchor{
+  font-size:14px;color:rgba(255,255,255,0.75);
+  line-height:1.65;margin-bottom:12px;
+}
+#bmp-app .drill-transform{
+  font-size:13px;color:rgba(160,120,64,0.85);
+  padding:10px 14px;
+  background:rgba(160,120,64,0.08);
+  border:1px solid rgba(160,120,64,0.18);
+  border-radius:6px;line-height:1.6;margin-bottom:18px;
+}
+#bmp-app .drill-transform .tl{color:rgba(160,120,64,0.6);}
+#bmp-app .drill-rating{
+  display:flex;gap:8px;margin-bottom:6px;
+}
+#bmp-app .drill-rating-label{
+  font-size:10px;color:rgba(255,255,255,0.35);
+  font-family:system-ui,sans-serif;letter-spacing:0.08em;
+  text-transform:uppercase;margin-bottom:8px;display:block;
+}
+#bmp-app .rate-btn{
+  flex:1;padding:10px 6px;border-radius:7px;
+  font-size:13px;font-family:system-ui,sans-serif;
+  font-weight:700;cursor:pointer;transition:all 0.15s;border:1.5px solid;
+}
+#bmp-app .rate-btn-1{background:rgba(210,60,60,0.15);border-color:rgba(210,60,60,0.45);color:#e05555;}
+#bmp-app .rate-btn-2{background:rgba(230,130,30,0.15);border-color:rgba(230,130,30,0.45);color:#e08030;}
+#bmp-app .rate-btn-3{background:rgba(220,190,30,0.15);border-color:rgba(220,190,30,0.45);color:#c8b020;}
+#bmp-app .rate-btn-4{background:rgba(100,180,60,0.15);border-color:rgba(100,180,60,0.45);color:#60b030;}
+#bmp-app .rate-btn-5{background:rgba(30,160,100,0.15);border-color:rgba(30,160,100,0.45);color:#1da070;}
+#bmp-app .rate-btn:hover{filter:brightness(1.3);transform:translateY(-1px);}
+#bmp-app .drill-note-field{
+  width:100%;min-height:52px;background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.12);border-radius:5px;
+  padding:8px 12px;color:#f5f4f0;font-size:13px;
+  font-family:Lora,Georgia,serif;resize:vertical;outline:none;
+  transition:border-color 0.2s;margin-top:12px;
+}
+#bmp-app .drill-note-field:focus{border-color:#a07840;}
+#bmp-app .drill-nav-hint{
+  font-size:10px;color:rgba(255,255,255,0.25);
+  text-align:center;margin-top:12px;
+  font-family:system-ui,sans-serif;letter-spacing:0.04em;
+}
+#bmp-app .drill-nav-hint kbd{
+  background:rgba(255,255,255,0.1);border-radius:3px;
+  padding:1px 5px;font-size:9px;font-family:monospace;
 }
 
-#bmp-app .btn-save-img:hover{background:rgba(160,120,64,0.30);}
-
-#bmp-app .btn-cancel-img{
-
-  background:transparent;
-
-  border:1px solid rgba(0,0,0,0.14);color:#857e79;
-
+/* ── Drill Stats Bar ── */
+#bmp-app .drill-stats{
+  display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;
+}
+#bmp-app .drill-stat{
+  background:#ffffff;border:1px solid rgba(0,0,0,0.08);
+  border-radius:6px;padding:10px 16px;
+  display:flex;flex-direction:column;gap:3px;flex:1;min-width:80px;
+}
+#bmp-app .drill-stat-val{
+  font-size:22px;font-weight:700;font-family:system-ui,sans-serif;
+  color:#1a1917;
+}
+#bmp-app .drill-stat-lbl{
+  font-size:10px;color:#6b6560;font-family:system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:0.08em;
 }
 
-#bmp-app .btn-cancel-img:hover{border-color:rgba(0,0,0,0.20);color:#1a1917;}
+/* ── Image Edit Overlay ── */
+#bmp-app #imgEditOverlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(255,255,255,0.95);
+  z-index:9999;align-items:center;justify-content:center;
+}
+#bmp-app #imgEditOverlay.open{display:flex;}
+#bmp-app .img-edit-modal{
+  background:#f0eeea;border:1px solid rgba(0,0,0,0.12);
+  border-radius:10px;padding:28px;width:420px;max-width:90vw;
+}
+#bmp-app .img-edit-modal h3{
+  font-family:Gloock,Georgia,serif;font-size:18px;font-weight:400;
+  color:#1a1917;margin:0 0 14px;
+}
+
+/* ── Import Modal ── */
+#bmp-app .import-modal{
+  background:#f0eeea;border:1px solid rgba(0,0,0,0.12);
+  border-radius:10px;padding:28px;width:460px;max-width:90vw;
+}
+#bmp-app .import-modal h3{
+  font-family:Gloock,Georgia,serif;font-size:18px;font-weight:400;
+  color:#1a1917;margin:0 0 8px;
+}
+#bmp-app .import-modal p{font-size:13px;color:#6b6560;margin:0 0 14px;line-height:1.5;}
+#bmp-app .import-dropzone{
+  border:2px dashed rgba(160,120,64,0.40);border-radius:8px;
+  padding:28px;text-align:center;cursor:pointer;
+  background:rgba(160,120,64,0.04);transition:all 0.2s;margin-bottom:14px;
+}
+#bmp-app .import-dropzone:hover{background:rgba(160,120,64,0.10);border-color:#a07840;}
+#bmp-app .import-dropzone-text{font-size:13px;color:#857e79;font-family:system-ui,sans-serif;}
+#bmp-app #importFileInput{display:none;}
 
 </style>
 
 <div id="bmp-app">
 
 <div class="bmp-hdr"><div class="bmp-hdr-in">
-
-<h1>Body Mind Palace</h1>
-
-<p class="subtitle">50 Loci × 10 Räume — Körper als Gedächtnisarchitektur</p>
-
+  <div>
+    <h1>Body Mind Palace</h1>
+    <p class="subtitle">50 Loci × 10 Räume — Körper als Gedächtnisarchitektur</p>
+  </div>
+  <div class="kbd-hint">
+    <kbd>←</kbd><kbd>→</kbd> navigieren &nbsp;·&nbsp; <kbd>D</kbd> Drill &nbsp;·&nbsp; <kbd>Leertaste</kbd> aufdecken
+  </div>
 </div></div>
 
 <div class="bmp-body">
 
 <div class="person-bar" id="personBar">
-
   <div class="person-field"><label>Person / Charakter</label><input type="text" id="personInput" placeholder="z.B. Einstein" onblur="switchPerson(this.value)" /></div>
-
   <div class="person-field"><label>Thema</label><input type="text" id="themaInput" placeholder="z.B. Quantenphysik" onblur="saveThema(this.value)" /></div>
-
   <div class="export-bar">
-
-    <button class="exp-btn" onclick="exportPerson()">Export</button>
-
-    <button class="exp-btn" onclick="exportAll()">Alle exportieren</button>
-
+    <button class="exp-btn drill-btn" onclick="openDrill()">⚡ Drill</button>
+    <button class="exp-btn" onclick="exportJSON()">JSON Export</button>
+    <button class="exp-btn" onclick="openImport()">JSON Import</button>
+    <button class="exp-btn" onclick="exportPerson()">E-Mail Export</button>
   </div>
-
 </div>
 
 <div class="person-chips" id="personChips"></div>
 
+<div id="drillStats" class="drill-stats" style="display:none;margin-bottom:16px;"></div>
+
 <div class="room-tabs" id="tabs"></div>
 
 <div class="layout">
-
   <div class="loci-col" id="lociList"></div>
-
   <div class="detail-panel" id="detailPanel">
-
     <div class="img-zone" id="imgZone" style="display:none;">
-
       <img id="locusImg" src="" alt="" style="display:none;" />
-
       <div id="imgMsg" class="img-msg"></div>
-
       <span id="imgSrc" class="img-src"></span>
-
       <button id="editImgBtn" class="next-btn" onclick="openImgEdit()" style="display:none;">Bild bearbeiten</button>
-
     </div>
-
     <div class="det-body" id="detBody"></div>
-
     <div class="room-map" id="roomMapWrap" style="display:none;">
-
       <div class="room-map-title">Raumkarte</div>
-
       <div class="map-canvas" id="roomMap"></div>
-
     </div>
-
   </div>
-
 </div>
 
 </div>
-
 </div>
 
 <script>
-
 const SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
-
 const COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
-
 const POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
-
 const POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
 
 const rooms=[
-
 {name:"Bibliothek",body:"Kopfdecke",loci:[
-
 {n:"Rotierender Globus",q:"antique globe",senses:["Sicht","Gehör","Tastsinn"],anchor:"Dreht sich langsam, leuchtet von innen warm-orange. Tiefes Brummen das die Brust vibrieren lässt. Meridianlinien aus Metall — eiskalt beim Anfassen.",transform:"Deine Person greift den Globus — er dreht sich zu einem Ort der mit ihr verknüpft ist."},
-
 {n:"Schmiedeeisen-Wendeltreppe",q:"spiral staircase iron",senses:["Gehör","Tastsinn","Gleichgewicht"],anchor:"Jede Stufe vibriert unter dem Gewicht. Handlauf an einer Stelle abgenutzt — exakt dort greifst du immer.",transform:"Deine Person steigt hinab — die Treppe klingt anders mit jedem ihrer Schritte."},
-
 {n:"Geheimtür hinter Regal",q:"secret door bookcase hidden passage",senses:["Gehör","Tastsinn","Sicht"],anchor:"Das Regal gleitet, Bücher fallen, Zugluft aus dem dunklen Tunnel. Knarzendes Holz, Geruch von altem Papier verdichtet sich massiv.",transform:"Deine Person steht in der offenen Tür — dahinter liegt ihre Welt."},
-
 {n:"Glasvitrine verbotener Bücher",q:"glass display cabinet books locked",senses:["Sicht","Gehör"],anchor:"Abgeschlossen mit Eisenriegel. Rotes Licht pulsiert von innen alle 4 Sekunden.",transform:"Deine Person legt die Hand ans Glas — die Bücher bewegen sich ihr entgegen."},
-
 {n:"Totenkopf-Briefbeschwerer",q:"skull paperweight marble",senses:["Tastsinn","Sicht"],anchor:"Aus schwarzem Marmor, eiskalt. Auf dem zerwühlten Schreibtisch, daneben brennende Kerze.",transform:"Deine Person legt die Hand auf den Schädel — er beginnt in ihrer Farbe zu leuchten."}
-
 ]},
-
 {name:"Foyer",body:"Ohr",loci:[
-
 {n:"Empfangsglocke auf Steintisch",q:"reception bell brass hotel",senses:["Gehör","Tastsinn"],anchor:"Einzelner Ton, 10 Sekunden Nachhall. Beim Drücken schwingt die ganze Tischfläche mit.",transform:"Deine Person klingelt — der Ton hat ihre Stimmlage, ihren Charakter."},
-
 {n:"Verzögerter Wandspiegel",q:"ornate mirror grand hall",senses:["Sicht","Gleichgewicht"],anchor:"Goldrahmen, 3 Meter hoch. Das Spiegelbild reagiert eine halbe Sekunde zu spät.",transform:"Der Spiegel zeigt für deine Person ihre Vergangenheit statt sie selbst."},
-
 {n:"Marmorboden-Kompass",q:"compass rose marble floor mosaic",senses:["Tastsinn","Sicht"],anchor:"Grosses Kompassmotiv im weissen Marmor — Metalleinlagen eiskalt, spürbar durch Schuhe.",transform:"Deine Person tritt auf die Mitte — die Nadel schlägt sofort in eine neue Richtung."},
-
 {n:"Tief hängender Kronleuchter",q:"crystal chandelier ceiling",senses:["Sicht","Gehör","Tastsinn"],anchor:"Hängt auf Kopfhöhe — Kristalle klirren bei jeder Bewegung. Man muss ducken.",transform:"Alle Kristalle orientieren sich ihr zu während sie darunter geht."},
-
 {n:"Garderobe mit fremdem Mantel",q:"coat rack entrance hallway",senses:["Geruch","Tastsinn","Sicht"],anchor:"Einer der Mäntel fällt immer. Schwerer unbekannter Parfumduft. Taschen voller fremder Dinge.",transform:"Deine Person zieht den Mantel an — er passt ihr perfekt obwohl er zu gross war."}
-
 ]},
-
 {name:"Kinosaal",body:"Auge",loci:[
-
 {n:"Ratterende Popcornmaschine",q:"popcorn machine vintage",senses:["Geruch","Gehör","Sicht"],anchor:"Heisser Karamellgeruch, Ratterlärm, Dampfwolke. Immer zu heiss zum Anfassen.",transform:"Deine Person bedient die Maschine — was rauskommt hat ihre Farbe und ihr Symbol."},
-
 {n:"Erster-Reihe-Plüschsessel",q:"cinema seat red velvet",senses:["Tastsinn","Gleichgewicht"],anchor:"Knallrot, abgenutzt. Beim Hinsetzen sinkt man tief ein — Aufstehen braucht echte Kraft.",transform:"Deine Person sitzt dort — von hier aus sieht sie alles auf dem Screen."},
-
 {n:"Heisser Projektor an der Decke",q:"film projector cinema vintage",senses:["Sicht","Tastsinn","Gehör"],anchor:"Summt tief, der Lichtstrahl ist staubig und sichtbar. Wärme auf der Haut davor.",transform:"Deine Person blockiert das Licht — ihre Silhouette verändert das Bild fundamental."},
-
 {n:"Flackernder Riesenbildschirm",q:"cinema screen empty theater",senses:["Sicht","Gehör"],anchor:"Zeigt weisses Rauschen. Ohrenbetäubend laut, Flackern erzeugt Nachbilder.",transform:"Der Screen zeigt Szenen aus ihrem Leben in schwarz-weiss."},
-
 {n:"Notausgang hinten links",q:"emergency exit sign door",senses:["Sicht","Tastsinn","Gleichgewicht"],anchor:"Rotes EXIT-Licht wirft auf alles einen roten Schatten. Eiskalter Betonboden dort.",transform:"Als einzige wäre deine Person fähig durch diese Tür zu gehen."}
-
 ]},
-
 {name:"Käselager",body:"Nase",loci:[
-
 {n:"Schmiedeeiserne Gittertür",q:"iron gate rusty dungeon",senses:["Gehör","Tastsinn"],anchor:"Verrostet, klemmt. Quietscht langgezogen, vibriert nach. Hinterlässt Rostspuren an der Hand.",transform:"Für deine Person öffnet die Tür sich allein — aber sie quietscht trotzdem."},
-
 {n:"Exakt-treffende Deckentropfen",q:"water dripping stone cave ceiling",senses:["Tastsinn","Gehör"],anchor:"Eiskalte Tropfen fallen alle 12 Sekunden — immer auf denselben Punkt.",transform:"Die Tropfen formen ihre Initialen auf dem Boden."},
-
 {n:"Schwarz verfaulter Laib",q:"cheese wheel aged cellar",senses:["Sicht","Geruch"],anchor:"Regal mit nummerierten Laiben — Nummer 7 vollständig schwarz, leuchtet biolumineszent.",transform:"Deine Person zieht Nummer 7 aus dem Regal — es pulsiert in ihrer Hand."},
-
 {n:"Massives Käserad an der Wand",q:"large cheese wheel storage",senses:["Geruch","Tastsinn","Sicht"],anchor:"Zwei Meter Durchmesser, in Eisenhalterungen. Bröckelt sofort beim Berühren.",transform:"Der Schimmelfleck nimmt ihre Silhouettenform an."},
-
 {n:"Eingekeiltes Käsemesser",q:"knife embedded chopping block",senses:["Tastsinn","Sicht"],anchor:"Tief in den Hackblock eingehauen, zieht sich nicht heraus. Klinge blank, Griff schwarzes Holz.",transform:"Deine Person zieht das Messer mühelos heraus — und hält es hoch."}
-
 ]},
-
 {name:"Speisesaal",body:"Mund",loci:[
-
 {n:"Rhythmisch knarrender Dienereingang",q:"old wooden door corridor",senses:["Gehör","Tastsinn"],anchor:"Kleine Tür, halb offen, knarzt im Rhythmus des Durchzugs. Küchengerüche in Wellen.",transform:"Deine Person hält die Tür auf — dahinter ist ihre Welt."},
-
 {n:"Kamin mit Ascheflug",q:"fireplace burning logs",senses:["Sicht","Geruch","Tastsinn"],anchor:"Laut knisternd, Ascheflocken fliegen bis in die Raummitte. Holzrauchgeruch dominiert alles.",transform:"Das Feuer nimmt für einen Moment ihre Form an."},
-
 {n:"20-Platz-Tisch, ein Teller",q:"long dining table empty grand",senses:["Sicht","Geruch"],anchor:"Langer Tisch, 20 Stühle, alle leer — nur einer besetzt: noch warmes Essen dampft.",transform:"Deine Person setzt sich — das Essen auf dem Teller verändert sich sofort."},
-
 {n:"Büffet mit geschlossenen Kuppeln",q:"silver cloche serving dish",senses:["Geruch","Gleichgewicht"],anchor:"Silberne Kuppeln reihenweise. Dampf kommt darunter vor. Unbekannte schwere Gerüche.",transform:"Deine Person öffnet eine Kuppel — darunter liegt ihr typisches Gericht."},
-
 {n:"Silberkandelaber, eine Kerze fehlt",q:"candelabra silver candles table",senses:["Sicht","Geruch"],anchor:"12 Kerzen, elf brennen. Kerze Nummer 9 nicht angezündet — Docht schwarz.",transform:"Deine Person zündet Kerze 9 an — sie brennt in ihrer Lieblingsfarbe."}
-
 ]},
-
 {name:"Boxring",body:"Kinn",loci:[
-
 {n:"Schiedsrichterglocke",q:"boxing ring bell",senses:["Gehör","Tastsinn"],anchor:"Messing, einmaliger Ton ohrenbetäubend, klingt 15 Sekunden nach.",transform:"Deine Person läutet — Ton hat genau ihre Tonhöhe, ihre Energie."},
-
 {n:"Rote Ecke, nasser Schwamm",q:"boxing corner stool ring",senses:["Geruch","Tastsinn","Sicht"],anchor:"Niedriger Hocker, Eiseneimer mit rötlichem Wasser, Schwamm der tropft.",transform:"Deine Person sitzt auf dem Hocker — das ist ihr Eckmann-Moment."},
-
 {n:"Spiegelwand hinter dem Ring",q:"gym mirror wall boxing",senses:["Sicht","Gleichgewicht"],anchor:"Breite Spiegelwand, leicht gewölbt. Alles erscheint breiter, verzerrter.",transform:"In der Spiegelwand erscheint deine Person dreifach — alle drei verschieden."},
-
 {n:"Schwebender Sandsack",q:"punching bag hanging",senses:["Gehör","Tastsinn"],anchor:"Hängt an der Decke, schwingt langsam von selbst. Jeder Schlag wirbelt Staubwolken auf.",transform:"Deine Person trifft den Sack — er schwingt ihr entgegen, nicht weg."},
-
 {n:"Federnde Ringseile",q:"boxing ring ropes corner",senses:["Tastsinn","Gleichgewicht"],anchor:"Drei Ebenen, elastisch gespannt. Beim Draufdrücken spritzen sie zurück.",transform:"Deine Person lehnt an den Seilen — sie halten ihr Gewicht ohne nachzugeben."}
-
 ]},
-
 {name:"Fitnessraum",body:"Achseln",loci:[
-
 {n:"Tropfender Wasserspender",q:"water cooler dispenser",senses:["Tastsinn","Gehör","Geruch"],anchor:"Tropft alle 8 Sekunden. Wasser eiskalt, Kälteschauer beim ersten Schluck.",transform:"Deine Person trinkt — das Wasser hat für sie eine andere Temperatur."},
-
 {n:"Rostige Klimmzugstange",q:"pull up bar gym",senses:["Tastsinn","Sicht"],anchor:"Über der Tür, muss man springen. Rost hinterlässt rotbraune Spuren an beiden Händen.",transform:"Deine Person zieht sich hoch ohne Anlauf — mit einer Hand."},
-
 {n:"Immer laufendes Laufband",q:"treadmill running machine",senses:["Gehör","Gleichgewicht"],anchor:"Startet wenn man drauftritt — sofortiger Sog nach hinten. Summt gleichmässig tief.",transform:"Es beschleunigt automatisch auf ihr Tempo."},
-
 {n:"Eisenkalte Hantelbank",q:"weight bench barbell",senses:["Tastsinn","Geruch"],anchor:"Lederauflage mit zwei langen Rissen. Eisenstange darüber, eiskalt.",transform:"Das Gewicht auf der Stange entspricht ihrer inneren Last."},
-
 {n:"Spind mit zufallendem Deckel",q:"gym locker room metal",senses:["Gehör","Geruch"],anchor:"Legt man etwas hinein, fällt der Metalldeckel immer laut auf die Hand.",transform:"Für deine Person klemmt der Spind nicht — er hält was sie hineintut."}
-
 ]},
-
 {name:"Tiefgarage",body:"Bauchnabel",loci:[
-
 {n:"Regenbogen-Öllache",q:"oil spill rainbow puddle",senses:["Sicht","Tastsinn","Gleichgewicht"],anchor:"Gross, irisierend schön — aber der erste Schritt darauf ist sofort rutschig.",transform:"Deine Person geht durch die Lache ohne zu rutschen — Spuren in ihrer Farbe."},
-
 {n:"Flackernde Neonröhre",q:"fluorescent light tube",senses:["Sicht","Gehör"],anchor:"Kein Rhythmus — manchmal aus für 3 Sekunden, dann dreifaches Flackern.",transform:"Mit deiner Person im Raum flackert die Röhre in ihrem inneren Rhythmus."},
-
 {n:"Auto auf Hebebühne",q:"car garage hydraulic lift",senses:["Geruch","Tastsinn","Sicht"],anchor:"Rostig, alte Karosserie, Öl tropft. Stellt man sich darunter: Tropfen landet zwischen den Augen.",transform:"Deine Person steht daneben — das Auto ist ihr Fahrzeug, ihr Zustand."},
-
 {n:"Werkzeugwand, fehlender Hammer",q:"tool pegboard workshop",senses:["Sicht","Gleichgewicht"],anchor:"Alle Umrisse gezeichnet, alle Werkzeuge am Platz — ausser der grosse Hammer.",transform:"Deine Person findet den Hammer sofort — er liegt genau dort wo sie hinschaut."},
-
 {n:"Grünes Notausgangsschild",q:"green emergency exit sign",senses:["Sicht","Gleichgewicht"],anchor:"Einzige Lichtquelle in der hinteren Hälfte. Zieht die Augen magnetisch an.",transform:"Deine Person geht direkt darauf zu — dahinter ist ihre nächste Station."}
-
 ]},
-
 {name:"Luxustreppe",body:"Beine",loci:[
-
 {n:"Tiefer roter Teppich",q:"red staircase carpet luxury",senses:["Tastsinn","Gehör"],anchor:"Knöcheltief, alle Schritte lautlos absorbiert. Man hört sich selbst nicht mehr gehen.",transform:"Deine Person hinterlässt keine Abdrücke — oder tiefere als jeder andere."},
-
 {n:"Goldenes Geländer",q:"gold handrail staircase banister",senses:["Tastsinn","Sicht"],anchor:"Massives Messing, kalt, poliert bis man sich sieht. Eine abgenutzte Stelle auf Hüfthöhe.",transform:"Es wärmt sich sofort — als hätte es auf sie gewartet."},
-
 {n:"Ölgemälde auf Halbabsatz",q:"portrait painting oil canvas",senses:["Sicht","Gleichgewicht"],anchor:"Porträt eines Unbekannten — die Augen folgen einem messbar. Goldener Rahmen, leicht schief.",transform:"Wenn deine Person vorbeigeht, zeigt das Gemälde plötzlich ihr Gesicht."},
-
 {n:"Wachsgesicht auf dem Boden",q:"melted candle wax drips",senses:["Sicht","Geruch"],anchor:"Kerzenleuchter auf dem Absatz — Wachstropfen haben sich zu einem Gesicht aufgetürmt.",transform:"Das Wachsgesicht ähnelt deiner Person — sie bemerkt es, du auch."},
-
 {n:"Knarzendes oberstes Brett",q:"wooden staircase old steps",senses:["Gehör","Gleichgewicht"],anchor:"Alle anderen Stufen stumm und fest. Das letzte Brett knarzt laut und wackelt minimal.",transform:"Für deine Person gibt das Brett keinen Ton — die Treppe kennt sie."}
-
 ]},
-
 {name:"Schlafzimmer",body:"Fuss",loci:[
-
 {n:"Dampfende Badtür",q:"bathroom steam door frosted glass",senses:["Tastsinn","Sicht","Geruch"],anchor:"Feuchte Wärme durch Türritzen. Milchiges Glas, etwas dahinter bewegt sich.",transform:"Wenn deine Person die Tür öffnet, ist jemand im Bad — die für sie wichtigste Person."},
-
 {n:"Fenster über Abgrund",q:"window open fog abyss",senses:["Gleichgewicht","Tastsinn","Gehör"],anchor:"Öffnet man es: starker Windzug, Pfeifen. Kein Boden sichtbar. Schwindel beim Nähern.",transform:"Deine Person öffnet das Fenster und lehnt sich hinaus ohne Schwindel."},
-
 {n:"Rotierender Deckenspiegel",q:"ceiling mirror reflection",senses:["Sicht","Gleichgewicht"],anchor:"Dreht sich minimal, kaum merklich — merkt man erst wenn man eine Weile liegt.",transform:"Im Spiegel sieht deine Person sich so wie sie sich innerlich sieht."},
-
 {n:"Himmelbett mit wehenden Vorhängen",q:"canopy bed curtains four poster",senses:["Sicht","Tastsinn"],anchor:"Vorhänge bewegen sich ohne Wind, rhythmisch. Bett perfekt gemacht, Eindrücke im Kissen frisch.",transform:"Die Vorhänge bewegen sich in ihrem Atem-Rhythmus."},
-
 {n:"Halb offene Nachttischlade",q:"bedside table drawer",senses:["Sicht","Gleichgewicht"],anchor:"Immer genau halb offen — schiebt man sie zu, geht sie wieder auf.",transform:"Deine Person öffnet die Lade ganz — darin liegt das Symbol ihrer Geschichte."}
-
 ]}
-
 ];
 
-let activeRoom=0, activeLocus=0, currentResults=[];// ── LOCAL IMAGE STORE ────────────────────────────────────────────
+let activeRoom=0, activeLocus=0;
 
+// ── IMAGE STORE ──
 const locusImages={
-
   "0_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_1.png",
-
   "0_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_2.png",
-
   "0_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_3.png",
-
   "0_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_4.png",
-
   "0_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_5.png",
-
   "1_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_1.png",
-
   "1_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_2.png",
-
   "1_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_3.png",
-
   "1_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_4.png",
-
   "1_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_5.png",
-
   "2_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_1.png",
-
   "2_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_2.png",
-
   "2_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_3.png",
-
   "2_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_4.png",
-
   "2_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_5.png",
-
   "3_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_1.png",
-
   "3_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_2.png",
-
   "3_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_3.png",
-
   "3_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_4.png",
-
   "3_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_5.png",
-
   "4_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_1.png",
-
   "4_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_2.png",
-
   "4_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_3.png",
-
   "4_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_4.png",
-
   "4_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_5.png",
-
   "5_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_2.png",
-
   "5_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_2-2.png",
-
   "5_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_3.png",
-
   "5_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_4.png",
-
   "5_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_5.png",
-
   "6_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_1.png",
-
   "6_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_2.png",
-
   "6_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_3.png",
-
   "6_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_4.png",
-
   "6_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_5.png",
-
   "7_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_1.png",
-
   "7_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_2.png",
-
   "7_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_3.png",
-
   "7_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_4.png",
-
   "7_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_5.png",
-
   "8_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_1.png",
-
   "8_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_2.png",
-
   "8_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_3.png",
-
   "8_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_4.png",
-
   "8_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_5.png",
-
   "9_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_1.png",
-
   "9_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_2.png",
-
   "9_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_3.png",
-
   "9_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_4.png",
-
   "9_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_5.png"
-
 };
 
+// ── DATA LAYER ──
 const DATA_KEY='bodypalace_data';
-
 let currentPerson='Standard';
-
 let bpData={};
 
 function bpLoad(){try{bpData=JSON.parse(localStorage.getItem(DATA_KEY)||'{}');}catch(e){bpData={};}}
-
 function bpSave(){localStorage.setItem(DATA_KEY,JSON.stringify(bpData));}
-
 function bpEnsure(p){if(!bpData[p])bpData[p]={thema:'',loci:{}};}
-
-function bpGetNote(r,l){bpEnsure(currentPerson);return(bpData[currentPerson].loci[r+'_'+l]||{}).note||'';}
-
-function bpSetNote(r,l,v){bpEnsure(currentPerson);if(!bpData[currentPerson].loci[r+'_'+l])bpData[currentPerson].loci[r+'_'+l]={};bpData[currentPerson].loci[r+'_'+l].note=v;bpSave();}
-
-function switchPerson(name){
-
-  const n=(name||'').trim()||'Standard';
-
-  currentPerson=n;
-
-  bpLoad();bpEnsure(n);
-
-  const pi=document.getElementById('personInput');
-
-  const ti=document.getElementById('themaInput');
-
-  if(pi&&pi.value!==n)pi.value=n;
-
-  if(ti)ti.value=bpData[n].thema||'';
-
-  renderChips();renderLoci();renderDetail();
-
-}
-
-function saveThema(){
-
-  const ti=document.getElementById('themaInput');
-
-  if(!ti)return;
-
+function bpGetLocus(r,l){bpEnsure(currentPerson);return bpData[currentPerson].loci[r+'_'+l]||{};}
+function bpSetLocus(r,l,fields){
   bpEnsure(currentPerson);
+  const key=r+'_'+l;
+  if(!bpData[currentPerson].loci[key])bpData[currentPerson].loci[key]={};
+  Object.assign(bpData[currentPerson].loci[key],fields);
+  bpSave();
+}
+function bpGetNote(r,l){return bpGetLocus(r,l).note||'';}
+function bpSetNote(r,l,v){bpSetLocus(r,l,{note:v});}
+function bpGetScore(r,l){return bpGetLocus(r,l).score||0;}
+function bpSetScore(r,l,s){bpSetLocus(r,l,{score:s,lastDrill:Date.now()});}
 
+// ── SCORE COLORS ──
+function scoreColor(s){
+  if(!s)return '#ccc';
+  if(s<=1)return '#e05555';
+  if(s<=2)return '#e08030';
+  if(s<=3)return '#c8b020';
+  if(s<=4)return '#60b030';
+  return '#1da070';
+}
+function scoreLabel(s){
+  if(!s)return '—';
+  return ['','✗','△','◇','✓','★'][s]||s;
+}
+
+// ── PERSON MANAGEMENT ──
+function switchPerson(name){
+  const n=(name||'').trim()||'Standard';
+  currentPerson=n;
+  bpLoad();bpEnsure(n);
+  const pi=document.getElementById('personInput');
+  const ti=document.getElementById('themaInput');
+  if(pi&&pi.value!==n)pi.value=n;
+  if(ti)ti.value=bpData[n].thema||'';
+  renderChips();renderTabs();renderLoci();renderDetail();updateDrillStats();
+}
+function saveThema(){
+  const ti=document.getElementById('themaInput');
+  if(!ti)return;
+  bpEnsure(currentPerson);
   bpData[currentPerson].thema=ti.value.trim();
-
   bpSave();renderChips();
-
 }
-
 function renderChips(){
-
   const el=document.getElementById('personChips');
-
   if(!el)return;
-
   const ps=Object.keys(bpData);
-
-  if(ps.length===0){el.innerHTML='';return;}
-
-  el.innerHTML=ps.map(function(p){
-
+  if(!ps.length){el.innerHTML='';return;}
+  el.innerHTML=ps.map(p=>{
     const t=bpData[p].thema?(' &mdash; '+bpData[p].thema):'';
-
-    return '<button class="pchip'+(p===currentPerson?' active':'')
-
-      +'" onclick="switchPerson('+JSON.stringify(p)+')">'+p+t+'</button>';
-
+    return '<button class="pchip'+(p===currentPerson?' active':'')+'" onclick="switchPerson('+JSON.stringify(p)+')">'+p+t+'</button>';
   }).join('');
-
 }
 
+// ── NOTE ──
 function saveNote(){
-
   const nf=document.getElementById('noteField');
-
   if(!nf)return;
-
   bpSetNote(activeRoom,activeLocus,nf.value);
-
   const ns=document.getElementById('noteSaved');
-
-  if(ns){ns.classList.add('show');setTimeout(function(){ns.classList.remove('show');},1800);}
-
+  if(ns){ns.style.display='inline';setTimeout(()=>ns.style.display='none',1800);}
 }
-
 function loadNoteIntoField(){
-
   const nf=document.getElementById('noteField');
-
   if(nf)nf.value=bpGetNote(activeRoom,activeLocus);
-
 }
 
-function buildExportText(personName){
-
-  const pd=bpData[personName]||{thema:'',loci:{}};
-
-  const lines=['Body Mind Palace Export','Person: '+personName];
-
-  if(pd.thema)lines.push('Thema: '+pd.thema);
-
-  lines.push('Datum: '+new Date().toLocaleDateString('de-CH'),'');
-
-  rooms.forEach(function(room,ri){
-
-    lines.push('=== '+room.name+' ('+room.body+') ===');
-
-    room.loci.forEach(function(locus,li){
-
-      const ld=(pd.loci[ri+'_'+li])||{};
-
-      lines.push((li+1)+'. '+locus.n,'   Notiz: '+(ld.note||'-'));
-
+// ── DRILL STATS (main view) ──
+function updateDrillStats(){
+  const el=document.getElementById('drillStats');
+  if(!el)return;
+  let total=0,scored=0,sum=0,mastered=0;
+  rooms.forEach((room,ri)=>{
+    room.loci.forEach((_,li)=>{
+      total++;
+      const s=bpGetScore(ri,li);
+      if(s){scored++;sum+=s;if(s>=4)mastered++;}
     });
-
-    lines.push('');
-
   });
-
-  return lines.join('%0A');
-
+  if(!scored){el.style.display='none';return;}
+  el.style.display='flex';
+  const avg=scored?(sum/scored).toFixed(1):'—';
+  el.innerHTML=
+    '<div class="drill-stat"><div class="drill-stat-val">'+scored+'/'+total+'</div><div class="drill-stat-lbl">Geübt</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val">'+avg+'</div><div class="drill-stat-lbl">Ø Score</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val" style="color:#1da070">'+mastered+'</div><div class="drill-stat-lbl">Gemeistert</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val" style="color:#e05555">'+(total-mastered)+'</div><div class="drill-stat-lbl">Noch offen</div></div>';
 }
 
+// ── EXPORT / IMPORT ──
+function exportJSON(){
+  bpLoad();
+  const blob=new Blob([JSON.stringify(bpData,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='body-mind-palace-'+currentPerson+'-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();
+}
+function openImport(){
+  document.getElementById('importOverlay').style.display='flex';
+}
+function closeImport(){
+  document.getElementById('importOverlay').style.display='none';
+}
+function handleImportFile(e){
+  const file=e.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    try{
+      const imported=JSON.parse(ev.target.result);
+      Object.assign(bpData,imported);
+      bpSave();
+      closeImport();
+      renderChips();renderTabs();renderLoci();renderDetail();updateDrillStats();
+      alert('Import erfolgreich! '+Object.keys(imported).length+' Person(en) importiert.');
+    }catch(err){alert('Fehler beim Import: '+err.message);}
+  };
+  reader.readAsText(file);
+}
 function exportPerson(){
-
-  const txt=buildExportText(currentPerson);
-
+  const pd=bpData[currentPerson]||{thema:'',loci:{}};
+  const lines=['Body Mind Palace Export','Person: '+currentPerson];
+  if(pd.thema)lines.push('Thema: '+pd.thema);
+  lines.push('Datum: '+new Date().toLocaleDateString('de-CH'),'');
+  rooms.forEach((room,ri)=>{
+    lines.push('=== '+room.name+' ('+room.body+') ===');
+    room.loci.forEach((locus,li)=>{
+      const ld=pd.loci[ri+'_'+li]||{};
+      lines.push((li+1)+'. '+locus.n,'   Score: '+(ld.score||'—'),'   Notiz: '+(ld.note||'-'));
+    });
+    lines.push('');
+  });
   const sub=encodeURIComponent('Body Mind Palace Export - '+currentPerson);
-
-  window.open('mailto:?subject='+sub+'&body='+txt,'_self');
-
+  window.open('mailto:?subject='+sub+'&body='+lines.join('%0A'),'_self');
 }
 
-function exportAll(){
-
-  const ps=Object.keys(bpData);
-
-  const all=ps.map(buildExportText).join('%0A%0A----%0A%0A');
-
-  const sub=encodeURIComponent('Body Mind Palace Export - Alle Personen');
-
-  window.open('mailto:?subject='+sub+'&body='+all,'_self');
-
-}
-
-function locusKey(r,l){ return 'bmp_img_'+r+'_'+l; }
-
+// ── IMAGES ──
+function locusKey(r,l){return 'bmp_img_'+r+'_'+l;}
 function showImage(roomIdx,locusIdx){
-
   const img=document.getElementById('locusImg');
-
   const msg=document.getElementById('imgMsg');
-
   const editBtn=document.getElementById('editImgBtn');
-
-  const srcDiv=document.getElementById('imgSrc');
-
   const key=roomIdx+'_'+locusIdx;
-
   const url=locusImages[key]||localStorage.getItem('bmp_img_'+key);
-
-  if(img) img.style.display='none';
-
-  if(msg) msg.style.display='none';
-
-  if(srcDiv) srcDiv.innerHTML='';
-
-  if(editBtn) editBtn.style.display='inline-block';
-
+  if(img)img.style.display='none';
+  if(msg)msg.style.display='none';
+  if(editBtn)editBtn.style.display='inline-block';
   if(url){
-
     if(img){
-
-      img.src=url;
-
-      img.style.display='block';
-
-      img.onerror=()=>{
-
-        img.style.display='none';
-
-        if(msg){msg.textContent='Bild konnte nicht geladen werden.';msg.style.display='block';}
-
-      };
-
+      img.src=url;img.style.display='block';
+      img.onerror=()=>{img.style.display='none';if(msg){msg.textContent='Bild konnte nicht geladen werden.';msg.style.display='block';}};
     }
-
   } else {
-
     if(msg){msg.textContent='Kein Bild gespeichert.';msg.style.display='block';}
-
   }
-
+  const iz=document.getElementById('imgZone');
+  if(iz&&img)iz.style.display=(img.style.display!=='none'&&img.src)?'block':'none';
 }
-
 function openImgEdit(){
-
   const lName=rooms[activeRoom].loci[activeLocus].n;
-
   document.getElementById('imgEditTitle').textContent='Bild für: '+lName;
-
   document.getElementById('imgEditUrl').value=localStorage.getItem(locusKey(activeRoom,activeLocus))||'';
-
   document.getElementById('imgEditOverlay').style.display='flex';
-
 }
-
 function saveImgEdit(){
-
   const url=document.getElementById('imgEditUrl').value.trim();
-
   const key=locusKey(activeRoom,activeLocus);
-
-  if(url) localStorage.setItem(key,url);
-
-  else localStorage.removeItem(key);
-
+  if(url)localStorage.setItem(key,url); else localStorage.removeItem(key);
   document.getElementById('imgEditOverlay').style.display='none';
-
   showImage(activeRoom,activeLocus);
+}
+function closeImgEdit(){document.getElementById('imgEditOverlay').style.display='none';}
 
+// ── ROOM MAP ──
+const MAP_POS=[[50,82],[18,52],[18,18],[82,18],[82,52]];
+const NODE_COLORS=["#378ADD","#D4537E","#639922","#EF9F27","#9B59B6"];
+function renderMap(roomIdx,activeLoci){
+  const map=document.getElementById('roomMap');
+  if(!map)return;
+  const room=rooms[roomIdx];
+  if(!room)return;
+  const pts=MAP_POS;
+  let lines='';
+  for(let i=0;i<pts.length;i++){
+    const j=(i+1)%pts.length;
+    lines+=`<line x1="${pts[i][0]}%" y1="${pts[i][1]}%" x2="${pts[j][0]}%" y2="${pts[j][1]}%" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  }
+  let nodes='';
+  for(let i=0;i<room.loci.length;i++){
+    const l=room.loci[i];
+    const [px,py]=pts[i];
+    const color=NODE_COLORS[i];
+    const isActive=(i===activeLoci);
+    nodes+=`<div class="map-node${isActive?' active':''}" style="left:${px}%;top:${py}%;position:absolute;transform:translate(-50%,-50%)" onclick="selectLocus(${i})">
+      <div class="map-node-circle" style="border-color:${color};color:${color}${isActive?';background:'+color+';color:#fff':''}">${i+1}</div>
+      <div class="map-node-label">${l.n.length>12?l.n.slice(0,11)+'…':l.n}</div>
+    </div>`;
+  }
+  map.innerHTML=`<svg style="position:absolute;inset:0;width:100%;height:100%">${lines}</svg>${nodes}`;
 }
 
-function closeImgEdit(){
-
-  document.getElementById('imgEditOverlay').style.display='none';
-
+// ── RENDER DETAIL ──
+function renderDetail(){
+  renderMap(activeRoom,activeLocus);
+  const l=rooms[activeRoom].loci[activeLocus];
+  const stags=l.senses.map(s=>`<span class="stag" style="border-color:${SC[s]}55;color:${SC[s]};background:${SC[s]}11">${s}</span>`).join('');
+  const score=bpGetScore(activeRoom,activeLocus);
+  const scoreHtml=score?`<span style="margin-left:10px;font-size:13px;font-weight:700;color:${scoreColor(score)}">${scoreLabel(score)} Score ${score}/5</span>`:'';
+  document.getElementById('detBody').innerHTML=`
+    <div class="det-name">${l.n}${scoreHtml}</div>
+    <div class="det-pos">${POS[activeLocus]} — ${POSDIR[activeLocus]}</div>
+    <div class="sense-row">${stags}</div>
+    <div class="det-anchor">${l.anchor}</div>
+    <div class="det-transform"><span class="tl">Person-Transformation</span>${l.transform}</div>
+    <div class="note-section"><label>Meine Notiz</label>
+    <textarea class="note-field" id="noteField" placeholder="Was habe ich hier gelernt..." onblur="saveNote()"></textarea>
+    <span class="note-saved" id="noteSaved">Gespeichert</span></div>`;
+  showImage(activeRoom,activeLocus);
+  loadNoteIntoField();
 }
 
-const MAP_POS=[
+// ── RENDER LOCI ──
+function renderLoci(){
+  const ll=document.getElementById('lociList');
+  ll.innerHTML='';
+  rooms[activeRoom].loci.forEach((l,i)=>{
+    const score=bpGetScore(activeRoom,i);
+    const div=document.createElement('div');
+    div.className='lc'+(i===activeLocus?' sel':'');
+    const bar=score?`<div class="lc-progress-bar" style="width:${score*20}%;background:${scoreColor(score)}"></div>`:'';
+    div.innerHTML=`${bar}
+      <div class="lc-num" style="background:${COLS[i]}22;color:${COLS[i]};border:0.5px solid ${COLS[i]}55">${i+1}</div>
+      <div class="lc-info"><div class="lc-name">${l.n}</div><div class="lc-pos">${POS[i]}</div></div>
+      <div class="lc-score" style="color:${scoreColor(score)}">${scoreLabel(score)}</div>`;
+    div.onclick=()=>{activeLocus=i;renderLoci();renderDetail();};
+    ll.appendChild(div);
+  });
+}
 
-  [50,82], // locus 0: Eingang — bottom center
+// ── RENDER TABS ──
+function renderTabs(){
+  const t=document.getElementById('tabs');
+  t.innerHTML='';
+  rooms.forEach((r,i)=>{
+    // calc room progress
+    let total=r.loci.length,mastered=0;
+    r.loci.forEach((_,li)=>{if(bpGetScore(i,li)>=4)mastered++;});
+    const pct=Math.round(mastered/total*100);
+    const b=document.createElement('button');
+    b.className='rtab'+(i===activeRoom?' on':'');
+    b.innerHTML=`<span class="rtab-name">${r.name}</span><span class="rtab-body">${r.body}</span>
+      <div class="rtab-progress"><div class="rtab-progress-fill" style="width:${pct}%"></div></div>`;
+    b.onclick=()=>{activeRoom=i;activeLocus=0;bpLoad();bpEnsure(currentPerson);renderChips();renderTabs();renderLoci();renderDetail();};
+    t.appendChild(b);
+  });
+}
 
-  [18,52], // locus 1: Linke Wand — mid left
+function selectLocus(i){activeLocus=i;renderLoci();renderDetail();}
+<script>
+const SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
+const COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
+const POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
+const POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
 
-  [18,18], // locus 2: Linke Ecke hinten — top left
-
-  [82,18], // locus 3: Rechte Ecke hinten — top right
-
-  [82,52]  // locus 4: Rechte Wand — mid right
-
+const rooms=[
+{name:"Bibliothek",body:"Kopfdecke",loci:[
+{n:"Rotierender Globus",q:"antique globe",senses:["Sicht","Gehör","Tastsinn"],anchor:"Dreht sich langsam, leuchtet von innen warm-orange. Tiefes Brummen das die Brust vibrieren lässt. Meridianlinien aus Metall — eiskalt beim Anfassen.",transform:"Deine Person greift den Globus — er dreht sich zu einem Ort der mit ihr verknüpft ist."},
+{n:"Schmiedeeisen-Wendeltreppe",q:"spiral staircase iron",senses:["Gehör","Tastsinn","Gleichgewicht"],anchor:"Jede Stufe vibriert unter dem Gewicht. Handlauf an einer Stelle abgenutzt — exakt dort greifst du immer.",transform:"Deine Person steigt hinab — die Treppe klingt anders mit jedem ihrer Schritte."},
+{n:"Geheimtür hinter Regal",q:"secret door bookcase hidden passage",senses:["Gehör","Tastsinn","Sicht"],anchor:"Das Regal gleitet, Bücher fallen, Zugluft aus dem dunklen Tunnel. Knarzendes Holz, Geruch von altem Papier verdichtet sich massiv.",transform:"Deine Person steht in der offenen Tür — dahinter liegt ihre Welt."},
+{n:"Glasvitrine verbotener Bücher",q:"glass display cabinet books locked",senses:["Sicht","Gehör"],anchor:"Abgeschlossen mit Eisenriegel. Rotes Licht pulsiert von innen alle 4 Sekunden.",transform:"Deine Person legt die Hand ans Glas — die Bücher bewegen sich ihr entgegen."},
+{n:"Totenkopf-Briefbeschwerer",q:"skull paperweight marble",senses:["Tastsinn","Sicht"],anchor:"Aus schwarzem Marmor, eiskalt. Auf dem zerwühlten Schreibtisch, daneben brennende Kerze.",transform:"Deine Person legt die Hand auf den Schädel — er beginnt in ihrer Farbe zu leuchten."}
+]},
+{name:"Foyer",body:"Ohr",loci:[
+{n:"Empfangsglocke auf Steintisch",q:"reception bell brass hotel",senses:["Gehör","Tastsinn"],anchor:"Einzelner Ton, 10 Sekunden Nachhall. Beim Drücken schwingt die ganze Tischfläche mit.",transform:"Deine Person klingelt — der Ton hat ihre Stimmlage, ihren Charakter."},
+{n:"Verzögerter Wandspiegel",q:"ornate mirror grand hall",senses:["Sicht","Gleichgewicht"],anchor:"Goldrahmen, 3 Meter hoch. Das Spiegelbild reagiert eine halbe Sekunde zu spät.",transform:"Der Spiegel zeigt für deine Person ihre Vergangenheit statt sie selbst."},
+{n:"Marmorboden-Kompass",q:"compass rose marble floor mosaic",senses:["Tastsinn","Sicht"],anchor:"Grosses Kompassmotiv im weissen Marmor — Metalleinlagen eiskalt, spürbar durch Schuhe.",transform:"Deine Person tritt auf die Mitte — die Nadel schlägt sofort in eine neue Richtung."},
+{n:"Tief hängender Kronleuchter",q:"crystal chandelier ceiling",senses:["Sicht","Gehör","Tastsinn"],anchor:"Hängt auf Kopfhöhe — Kristalle klirren bei jeder Bewegung. Man muss ducken.",transform:"Alle Kristalle orientieren sich ihr zu während sie darunter geht."},
+{n:"Garderobe mit fremdem Mantel",q:"coat rack entrance hallway",senses:["Geruch","Tastsinn","Sicht"],anchor:"Einer der Mäntel fällt immer. Schwerer unbekannter Parfumduft. Taschen voller fremder Dinge.",transform:"Deine Person zieht den Mantel an — er passt ihr perfekt obwohl er zu gross war."}
+]},
+{name:"Kinosaal",body:"Auge",loci:[
+{n:"Ratterende Popcornmaschine",q:"popcorn machine vintage",senses:["Geruch","Gehör","Sicht"],anchor:"Heisser Karamellgeruch, Ratterlärm, Dampfwolke. Immer zu heiss zum Anfassen.",transform:"Deine Person bedient die Maschine — was rauskommt hat ihre Farbe und ihr Symbol."},
+{n:"Erster-Reihe-Plüschsessel",q:"cinema seat red velvet",senses:["Tastsinn","Gleichgewicht"],anchor:"Knallrot, abgenutzt. Beim Hinsetzen sinkt man tief ein — Aufstehen braucht echte Kraft.",transform:"Deine Person sitzt dort — von hier aus sieht sie alles auf dem Screen."},
+{n:"Heisser Projektor an der Decke",q:"film projector cinema vintage",senses:["Sicht","Tastsinn","Gehör"],anchor:"Summt tief, der Lichtstrahl ist staubig und sichtbar. Wärme auf der Haut davor.",transform:"Deine Person blockiert das Licht — ihre Silhouette verändert das Bild fundamental."},
+{n:"Flackernder Riesenbildschirm",q:"cinema screen empty theater",senses:["Sicht","Gehör"],anchor:"Zeigt weisses Rauschen. Ohrenbetäubend laut, Flackern erzeugt Nachbilder.",transform:"Der Screen zeigt Szenen aus ihrem Leben in schwarz-weiss."},
+{n:"Notausgang hinten links",q:"emergency exit sign door",senses:["Sicht","Tastsinn","Gleichgewicht"],anchor:"Rotes EXIT-Licht wirft auf alles einen roten Schatten. Eiskalter Betonboden dort.",transform:"Als einzige wäre deine Person fähig durch diese Tür zu gehen."}
+]},
+{name:"Käselager",body:"Nase",loci:[
+{n:"Schmiedeeiserne Gittertür",q:"iron gate rusty dungeon",senses:["Gehör","Tastsinn"],anchor:"Verrostet, klemmt. Quietscht langgezogen, vibriert nach. Hinterlässt Rostspuren an der Hand.",transform:"Für deine Person öffnet die Tür sich allein — aber sie quietscht trotzdem."},
+{n:"Exakt-treffende Deckentropfen",q:"water dripping stone cave ceiling",senses:["Tastsinn","Gehör"],anchor:"Eiskalte Tropfen fallen alle 12 Sekunden — immer auf denselben Punkt.",transform:"Die Tropfen formen ihre Initialen auf dem Boden."},
+{n:"Schwarz verfaulter Laib",q:"cheese wheel aged cellar",senses:["Sicht","Geruch"],anchor:"Regal mit nummerierten Laiben — Nummer 7 vollständig schwarz, leuchtet biolumineszent.",transform:"Deine Person zieht Nummer 7 aus dem Regal — es pulsiert in ihrer Hand."},
+{n:"Massives Käserad an der Wand",q:"large cheese wheel storage",senses:["Geruch","Tastsinn","Sicht"],anchor:"Zwei Meter Durchmesser, in Eisenhalterungen. Bröckelt sofort beim Berühren.",transform:"Der Schimmelfleck nimmt ihre Silhouettenform an."},
+{n:"Eingekeiltes Käsemesser",q:"knife embedded chopping block",senses:["Tastsinn","Sicht"],anchor:"Tief in den Hackblock eingehauen, zieht sich nicht heraus. Klinge blank, Griff schwarzes Holz.",transform:"Deine Person zieht das Messer mühelos heraus — und hält es hoch."}
+]},
+{name:"Speisesaal",body:"Mund",loci:[
+{n:"Rhythmisch knarrender Dienereingang",q:"old wooden door corridor",senses:["Gehör","Tastsinn"],anchor:"Kleine Tür, halb offen, knarzt im Rhythmus des Durchzugs. Küchengerüche in Wellen.",transform:"Deine Person hält die Tür auf — dahinter ist ihre Welt."},
+{n:"Kamin mit Ascheflug",q:"fireplace burning logs",senses:["Sicht","Geruch","Tastsinn"],anchor:"Laut knisternd, Ascheflocken fliegen bis in die Raummitte. Holzrauchgeruch dominiert alles.",transform:"Das Feuer nimmt für einen Moment ihre Form an."},
+{n:"20-Platz-Tisch, ein Teller",q:"long dining table empty grand",senses:["Sicht","Geruch"],anchor:"Langer Tisch, 20 Stühle, alle leer — nur einer besetzt: noch warmes Essen dampft.",transform:"Deine Person setzt sich — das Essen auf dem Teller verändert sich sofort."},
+{n:"Büffet mit geschlossenen Kuppeln",q:"silver cloche serving dish",senses:["Geruch","Gleichgewicht"],anchor:"Silberne Kuppeln reihenweise. Dampf kommt darunter vor. Unbekannte schwere Gerüche.",transform:"Deine Person öffnet eine Kuppel — darunter liegt ihr typisches Gericht."},
+{n:"Silberkandelaber, eine Kerze fehlt",q:"candelabra silver candles table",senses:["Sicht","Geruch"],anchor:"12 Kerzen, elf brennen. Kerze Nummer 9 nicht angezündet — Docht schwarz.",transform:"Deine Person zündet Kerze 9 an — sie brennt in ihrer Lieblingsfarbe."}
+]},
+{name:"Boxring",body:"Kinn",loci:[
+{n:"Schiedsrichterglocke",q:"boxing ring bell",senses:["Gehör","Tastsinn"],anchor:"Messing, einmaliger Ton ohrenbetäubend, klingt 15 Sekunden nach.",transform:"Deine Person läutet — Ton hat genau ihre Tonhöhe, ihre Energie."},
+{n:"Rote Ecke, nasser Schwamm",q:"boxing corner stool ring",senses:["Geruch","Tastsinn","Sicht"],anchor:"Niedriger Hocker, Eiseneimer mit rötlichem Wasser, Schwamm der tropft.",transform:"Deine Person sitzt auf dem Hocker — das ist ihr Eckmann-Moment."},
+{n:"Spiegelwand hinter dem Ring",q:"gym mirror wall boxing",senses:["Sicht","Gleichgewicht"],anchor:"Breite Spiegelwand, leicht gewölbt. Alles erscheint breiter, verzerrter.",transform:"In der Spiegelwand erscheint deine Person dreifach — alle drei verschieden."},
+{n:"Schwebender Sandsack",q:"punching bag hanging",senses:["Gehör","Tastsinn"],anchor:"Hängt an der Decke, schwingt langsam von selbst. Jeder Schlag wirbelt Staubwolken auf.",transform:"Deine Person trifft den Sack — er schwingt ihr entgegen, nicht weg."},
+{n:"Federnde Ringseile",q:"boxing ring ropes corner",senses:["Tastsinn","Gleichgewicht"],anchor:"Drei Ebenen, elastisch gespannt. Beim Draufdrücken spritzen sie zurück.",transform:"Deine Person lehnt an den Seilen — sie halten ihr Gewicht ohne nachzugeben."}
+]},
+{name:"Fitnessraum",body:"Achseln",loci:[
+{n:"Tropfender Wasserspender",q:"water cooler dispenser",senses:["Tastsinn","Gehör","Geruch"],anchor:"Tropft alle 8 Sekunden. Wasser eiskalt, Kälteschauer beim ersten Schluck.",transform:"Deine Person trinkt — das Wasser hat für sie eine andere Temperatur."},
+{n:"Rostige Klimmzugstange",q:"pull up bar gym",senses:["Tastsinn","Sicht"],anchor:"Über der Tür, muss man springen. Rost hinterlässt rotbraune Spuren an beiden Händen.",transform:"Deine Person zieht sich hoch ohne Anlauf — mit einer Hand."},
+{n:"Immer laufendes Laufband",q:"treadmill running machine",senses:["Gehör","Gleichgewicht"],anchor:"Startet wenn man drauftritt — sofortiger Sog nach hinten. Summt gleichmässig tief.",transform:"Es beschleunigt automatisch auf ihr Tempo."},
+{n:"Eisenkalte Hantelbank",q:"weight bench barbell",senses:["Tastsinn","Geruch"],anchor:"Lederauflage mit zwei langen Rissen. Eisenstange darüber, eiskalt.",transform:"Das Gewicht auf der Stange entspricht ihrer inneren Last."},
+{n:"Spind mit zufallendem Deckel",q:"gym locker room metal",senses:["Gehör","Geruch"],anchor:"Legt man etwas hinein, fällt der Metalldeckel immer laut auf die Hand.",transform:"Für deine Person klemmt der Spind nicht — er hält was sie hineintut."}
+]},
+{name:"Tiefgarage",body:"Bauchnabel",loci:[
+{n:"Regenbogen-Öllache",q:"oil spill rainbow puddle",senses:["Sicht","Tastsinn","Gleichgewicht"],anchor:"Gross, irisierend schön — aber der erste Schritt darauf ist sofort rutschig.",transform:"Deine Person geht durch die Lache ohne zu rutschen — Spuren in ihrer Farbe."},
+{n:"Flackernde Neonröhre",q:"fluorescent light tube",senses:["Sicht","Gehör"],anchor:"Kein Rhythmus — manchmal aus für 3 Sekunden, dann dreifaches Flackern.",transform:"Mit deiner Person im Raum flackert die Röhre in ihrem inneren Rhythmus."},
+{n:"Auto auf Hebebühne",q:"car garage hydraulic lift",senses:["Geruch","Tastsinn","Sicht"],anchor:"Rostig, alte Karosserie, Öl tropft. Stellt man sich darunter: Tropfen landet zwischen den Augen.",transform:"Deine Person steht daneben — das Auto ist ihr Fahrzeug, ihr Zustand."},
+{n:"Werkzeugwand, fehlender Hammer",q:"tool pegboard workshop",senses:["Sicht","Gleichgewicht"],anchor:"Alle Umrisse gezeichnet, alle Werkzeuge am Platz — ausser der grosse Hammer.",transform:"Deine Person findet den Hammer sofort — er liegt genau dort wo sie hinschaut."},
+{n:"Grünes Notausgangsschild",q:"green emergency exit sign",senses:["Sicht","Gleichgewicht"],anchor:"Einzige Lichtquelle in der hinteren Hälfte. Zieht die Augen magnetisch an.",transform:"Deine Person geht direkt darauf zu — dahinter ist ihre nächste Station."}
+]},
+{name:"Luxustreppe",body:"Beine",loci:[
+{n:"Tiefer roter Teppich",q:"red staircase carpet luxury",senses:["Tastsinn","Gehör"],anchor:"Knöcheltief, alle Schritte lautlos absorbiert. Man hört sich selbst nicht mehr gehen.",transform:"Deine Person hinterlässt keine Abdrücke — oder tiefere als jeder andere."},
+{n:"Goldenes Geländer",q:"gold handrail staircase banister",senses:["Tastsinn","Sicht"],anchor:"Massives Messing, kalt, poliert bis man sich sieht. Eine abgenutzte Stelle auf Hüfthöhe.",transform:"Es wärmt sich sofort — als hätte es auf sie gewartet."},
+{n:"Ölgemälde auf Halbabsatz",q:"portrait painting oil canvas",senses:["Sicht","Gleichgewicht"],anchor:"Porträt eines Unbekannten — die Augen folgen einem messbar. Goldener Rahmen, leicht schief.",transform:"Wenn deine Person vorbeigeht, zeigt das Gemälde plötzlich ihr Gesicht."},
+{n:"Wachsgesicht auf dem Boden",q:"melted candle wax drips",senses:["Sicht","Geruch"],anchor:"Kerzenleuchter auf dem Absatz — Wachstropfen haben sich zu einem Gesicht aufgetürmt.",transform:"Das Wachsgesicht ähnelt deiner Person — sie bemerkt es, du auch."},
+{n:"Knarzendes oberstes Brett",q:"wooden staircase old steps",senses:["Gehör","Gleichgewicht"],anchor:"Alle anderen Stufen stumm und fest. Das letzte Brett knarzt laut und wackelt minimal.",transform:"Für deine Person gibt das Brett keinen Ton — die Treppe kennt sie."}
+]},
+{name:"Schlafzimmer",body:"Fuss",loci:[
+{n:"Dampfende Badtür",q:"bathroom steam door frosted glass",senses:["Tastsinn","Sicht","Geruch"],anchor:"Feuchte Wärme durch Türritzen. Milchiges Glas, etwas dahinter bewegt sich.",transform:"Wenn deine Person die Tür öffnet, ist jemand im Bad — die für sie wichtigste Person."},
+{n:"Fenster über Abgrund",q:"window open fog abyss",senses:["Gleichgewicht","Tastsinn","Gehör"],anchor:"Öffnet man es: starker Windzug, Pfeifen. Kein Boden sichtbar. Schwindel beim Nähern.",transform:"Deine Person öffnet das Fenster und lehnt sich hinaus ohne Schwindel."},
+{n:"Rotierender Deckenspiegel",q:"ceiling mirror reflection",senses:["Sicht","Gleichgewicht"],anchor:"Dreht sich minimal, kaum merklich — merkt man erst wenn man eine Weile liegt.",transform:"Im Spiegel sieht deine Person sich so wie sie sich innerlich sieht."},
+{n:"Himmelbett mit wehenden Vorhängen",q:"canopy bed curtains four poster",senses:["Sicht","Tastsinn"],anchor:"Vorhänge bewegen sich ohne Wind, rhythmisch. Bett perfekt gemacht, Eindrücke im Kissen frisch.",transform:"Die Vorhänge bewegen sich in ihrem Atem-Rhythmus."},
+{n:"Halb offene Nachttischlade",q:"bedside table drawer",senses:["Sicht","Gleichgewicht"],anchor:"Immer genau halb offen — schiebt man sie zu, geht sie wieder auf.",transform:"Deine Person öffnet die Lade ganz — darin liegt das Symbol ihrer Geschichte."}
+]}
 ];
 
+const locusImages={
+"0_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_1.png",
+"0_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_2.png",
+"0_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_3.png",
+"0_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_4.png",
+"0_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_5.png",
+"1_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_1.png",
+"1_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_2.png",
+"1_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_3.png",
+"1_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_4.png",
+"1_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Foyer_5.png",
+"2_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_1.png",
+"2_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_2.png",
+"2_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_3.png",
+"2_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_4.png",
+"2_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kinosaal_5.png",
+"3_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_1.png",
+"3_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_2.png",
+"3_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_3.png",
+"3_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_4.png",
+"3_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Kaeselager_5.png",
+"4_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_1.png",
+"4_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_2.png",
+"4_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_3.png",
+"4_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_4.png",
+"4_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Speisesaal_5.png",
+"5_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_2.png",
+"5_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_2-2.png",
+"5_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_3.png",
+"5_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_4.png",
+"5_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Boxring_5.png",
+"6_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_1.png",
+"6_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_2.png",
+"6_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_3.png",
+"6_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_4.png",
+"6_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Fitnessraum_5.png",
+"7_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_1.png",
+"7_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_2.png",
+"7_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_3.png",
+"7_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_4.png",
+"7_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Tiefgarage_5.png",
+"8_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_1.png",
+"8_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_2.png",
+"8_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_3.png",
+"8_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_4.png",
+"8_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Luxustreppe_5.png",
+"9_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_1.png",
+"9_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_2.png",
+"9_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_3.png",
+"9_3":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_4.png",
+"9_4":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Schlafzimmer_5.png"
+};
+
+// ── STATE ──────────────────────────────────────────────────────
+let activeRoom=0, activeLocus=0;
+const DATA_KEY='bodypalace_data';
+let currentPerson='Standard';
+let bpData={};
+
+function bpLoad(){try{bpData=JSON.parse(localStorage.getItem(DATA_KEY)||'{}');}catch(e){bpData={};}}
+function bpSave(){localStorage.setItem(DATA_KEY,JSON.stringify(bpData));}
+function bpEnsure(p){if(!bpData[p])bpData[p]={thema:'',loci:{}};}
+function bpGetLocus(r,l){bpEnsure(currentPerson);return bpData[currentPerson].loci[r+'_'+l]||{};}
+function bpSetLocus(r,l,obj){bpEnsure(currentPerson);bpData[currentPerson].loci[r+'_'+l]=Object.assign(bpGetLocus(r,l),obj);bpSave();}
+function bpGetNote(r,l){return bpGetLocus(r,l).note||'';}
+function bpGetScore(r,l){return bpGetLocus(r,l).score||0;}
+
+// ── SCORE COLOURS ──────────────────────────────────────────────
+function scoreColor(s){
+  if(!s)return '#ccc';
+  return['','#e05555','#e08030','#c8b020','#60b030','#1da070'][s]||'#ccc';
+}
+function scoreLabel(s){
+  return['—','Nochmal','Schwach','Ok','Gut','Super!'][s]||'—';
+}
+
+// ── DRILL MODE ──
+let drillQueue=[], drillIdx=0, drillRevealed=false;
+
+function buildDrillQueue(){
+  // Sort by score ascending (weakest first), unscored first
+  const items=[];
+  rooms.forEach((room,ri)=>{
+    room.loci.forEach((_,li)=>{
+      items.push({ri,li,score:bpGetScore(ri,li)});
+    });
+  });
+  items.sort((a,b)=>a.score-b.score);
+  return items;
+}
+
+function openDrill(){
+  bpLoad();bpEnsure(currentPerson);
+  drillQueue=buildDrillQueue();
+  drillIdx=0;drillRevealed=false;
+  document.getElementById('drillOverlay').style.display='flex';
+  renderDrillCard();
+}
+function closeDrill(){
+  document.getElementById('drillOverlay').style.display='none';
+  renderTabs();renderLoci();renderDetail();updateDrillStats();
+}
+function renderDrillCard(){
+  if(drillIdx>=drillQueue.length){
+    document.getElementById('drillCardInner').innerHTML=`
+      <div style="padding:40px;text-align:center;color:#f5f4f0;">
+        <div style="font-size:48px;margin-bottom:16px;">🎉</div>
+        <div style="font-family:Gloock,Georgia,serif;font-size:24px;margin-bottom:8px;">Alle Loci geübt!</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:24px;">Drill abgeschlossen.</div>
+        <button class="exp-btn" onclick="closeDrill()" style="color:#a07840;border-color:#a07840;">Schliessen</button>
+      </div>`;
+    return;
+  }
+  drillRevealed=false;
+  const {ri,li}=drillQueue[drillIdx];
+  const room=rooms[ri];
+  const locus=room.loci[li];
+  const imgKey=ri+'_'+li;
+  const imgUrl=locusImages[imgKey]||localStorage.getItem('bmp_img_'+imgKey)||'';
+  const imgHtml=imgUrl
+    ?`<img src="${imgUrl}" alt="" onerror="this.style.display='none'">`
+    :`<div class="drill-img-placeholder">Kein Bild</div>`;
+  const color=COLS[li];
+  const score=bpGetScore(ri,li);
+  const noteVal=bpGetNote(ri,li);
+
+  document.getElementById('drillCardInner').innerHTML=`
+    <div class="drill-progress-header">
+      <span class="drill-counter">${drillIdx+1} / ${drillQueue.length}</span>
+      <span class="drill-room-label">${room.name} · ${room.body}</span>
+      <button class="drill-close-btn" onclick="closeDrill()">✕</button>
+    </div>
+    <div class="drill-img-wrap">
+      ${imgHtml}
+      <div class="drill-num-badge" style="border-color:${color};color:${color};background:${color}22">${li+1}</div>
+    </div>
+    <div class="drill-body">
+      <div class="drill-locus-name">${locus.n}</div>
+      <div class="drill-locus-pos">${POS[li]} — ${POSDIR[li]}</div>
+      <button class="drill-reveal-btn" id="drillRevealBtn" onclick="revealDrill()">
+        Aufdecken <span style="opacity:0.5;font-size:12px">(Leertaste)</span>
+      </button>
+      <div class="drill-content" id="drillContent">
+        <div class="drill-anchor">${locus.anchor}</div>
+        <div class="drill-transform"><span class="tl">Person-Transformation</span>${locus.transform}</div>
+        <span class="drill-rating-label">Wie gut hast du es gewusst?</span>
+        <div class="drill-rating">
+          <button class="rate-btn rate-btn-1" onclick="rateDrill(1)">1<br><span style="font-size:10px;font-weight:400">Gar nicht</span></button>
+          <button class="rate-btn rate-btn-2" onclick="rateDrill(2)">2<br><span style="font-size:10px;font-weight:400">Kaum</span></button>
+          <button class="rate-btn rate-btn-3" onclick="rateDrill(3)">3<br><span style="font-size:10px;font-weight:400">Halb</span></button>
+          <button class="rate-btn rate-btn-4" onclick="rateDrill(4)">4<br><span style="font-size:10px;font-weight:400">Gut</span></button>
+          <button class="rate-btn rate-btn-5" onclick="rateDrill(5)">5<br><span style="font-size:10px;font-weight:400">Perfekt</span></button>
+        </div>
+        <textarea class="drill-note-field" id="drillNoteField" placeholder="Notiz hinzufügen...">${noteVal}</textarea>
+      </div>
+      <div class="drill-nav-hint"><kbd>←</kbd> zurück &nbsp; <kbd>→</kbd> weiter &nbsp; <kbd>Leertaste</kbd> aufdecken</div>
+    </div>`;
+}
+
+function revealDrill(){
+  drillRevealed=true;
+  const btn=document.getElementById('drillRevealBtn');
+  const content=document.getElementById('drillContent');
+  if(btn)btn.style.display='none';
+  if(content)content.classList.add('open');
+}
+
+function rateDrill(score){
+  const {ri,li}=drillQueue[drillIdx];
+  // Save note if typed
+  const noteField=document.getElementById('drillNoteField');
+  if(noteField)bpSetNote(ri,li,noteField.value);
+  bpSetScore(ri,li,score);
+  drillIdx++;
+  renderDrillCard();
+}
+
+function drillNav(dir){
+  if(dir===1){
+    // save note before advancing
+    const noteField=document.getElementById('drillNoteField');
+    const {ri,li}=drillQueue[drillIdx]||{};
+    if(noteField&&ri!==undefined)bpSetNote(ri,li,noteField.value);
+    drillIdx=Math.min(drillIdx+1,drillQueue.length);
+    renderDrillCard();
+  } else {
+    drillIdx=Math.max(drillIdx-1,0);
+    renderDrillCard();
+  }
+}
+
+// ── KEYBOARD NAVIGATION ──
+document.addEventListener('keydown',function(e){
+  const drillOpen=document.getElementById('drillOverlay')&&document.getElementById('drillOverlay').style.display==='flex';
+  const tag=document.activeElement.tagName.toLowerCase();
+  const typing=(tag==='input'||tag==='textarea');
+
+  if(drillOpen){
+    if(e.key===' '&&!typing){e.preventDefault();if(!drillRevealed)revealDrill();}
+    if(e.key==='ArrowRight'&&!typing){e.preventDefault();drillNav(1);}
+    if(e.key==='ArrowLeft'&&!typing){e.preventDefault();drillNav(-1);}
+    if(e.key==='1'&&drillRevealed&&!typing)rateDrill(1);
+    if(e.key==='2'&&drillRevealed&&!typing)rateDrill(2);
+    if(e.key==='3'&&drillRevealed&&!typing)rateDrill(3);
+    if(e.key==='4'&&drillRevealed&&!typing)rateDrill(4);
+    if(e.key==='5'&&drillRevealed&&!typing)rateDrill(5);
+    if(e.key==='Escape')closeDrill();
+    return;
+  }
+  if(typing)return;
+  if(e.key==='ArrowRight'){
+    e.preventDefault();
+    if(activeLocus<rooms[activeRoom].loci.length-1){activeLocus++;renderLoci();renderDetail();}
+    else if(activeRoom<rooms.length-1){activeRoom++;activeLocus=0;renderTabs();renderLoci();renderDetail();}
+  }
+  if(e.key==='ArrowLeft'){
+    e.preventDefault();
+    if(activeLocus>0){activeLocus--;renderLoci();renderDetail();}
+    else if(activeRoom>0){activeRoom--;activeLocus=rooms[activeRoom].loci.length-1;renderTabs();renderLoci();renderDetail();}
+  }
+  if(e.key==='ArrowUp'){e.preventDefault();if(activeRoom>0){activeRoom--;activeLocus=0;renderTabs();renderLoci();renderDetail();}}
+  if(e.key==='ArrowDown'){e.preventDefault();if(activeRoom<rooms.length-1){activeRoom++;activeLocus=0;renderTabs();renderLoci();renderDetail();}}
+  if(e.key.toLowerCase()==='d'){openDrill();}
+});
+
+// ── INIT ──
+bpLoad();
+bpEnsure(currentPerson);
+document.getElementById('personInput').value=currentPerson;
+renderTabs();
+renderLoci();
+renderDetail();
+renderChips();
+updateDrillStats();
+
+// ── CREATE OVERLAYS ──
+(function(){
+  // Drill Overlay
+  var dov=document.createElement('div');
+  dov.id='drillOverlay';
+  dov.style.cssText='display:none;position:fixed;inset:0;background:rgba(26,25,23,0.96);z-index:8000;flex-direction:column;align-items:center;justify-content:center;padding:20px;overflow-y:auto;';
+  var dc=document.createElement('div');
+  dc.id='drillCardInner';
+  dc.style.cssText='background:#1a1917;border:1px solid rgba(255,255,255,0.10);border-radius:16px;width:100%;max-width:640px;overflow:hidden;';
+  dov.appendChild(dc);
+  document.body.appendChild(dov);
+
+  // ImgEdit Overlay
+  var ov=document.createElement('div');
+  ov.id='imgEditOverlay';
+  ov.style.cssText='display:none;position:fixed;inset:0;background:rgba(255,255,255,0.95);z-index:9999;align-items:center;justify-content:center;';
+  var modal=document.createElement('div');
+  modal.style.cssText='background:#f0eeea;border:1px solid rgba(0,0,0,0.12);border-radius:10px;padding:28px;width:420px;max-width:90vw;';
+  var h3=document.createElement('h3');h3.textContent='Bild bearbeiten';
+  h3.style.cssText='font-family:Gloock,Georgia,serif;font-size:18px;font-weight:400;color:#1a1917;margin:0 0 14px;';
+  var titleDiv=document.createElement('div');titleDiv.id='imgEditTitle';
+  titleDiv.style.cssText='font-size:12px;color:#6b6560;margin-bottom:10px;font-style:italic;';
+  var urlInput=document.createElement('input');urlInput.type='text';urlInput.id='imgEditUrl';
+  urlInput.placeholder='Bild-URL eingeben...';
+  urlInput.style.cssText='width:100%;background:#fff;border:1px solid rgba(0,0,0,0.12);border-radius:5px;padding:9px 12px;color:#1a1917;font-size:13px;font-family:Lora,Georgia,serif;outline:none;margin-bottom:12px;box-sizing:border-box;';
+  var btnRow=document.createElement('div');btnRow.style.cssText='display:flex;gap:10px;';
+  var btnSave=document.createElement('button');btnSave.textContent='Speichern';btnSave.onclick=saveImgEdit;
+  btnSave.style.cssText='flex:1;padding:8px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:rgba(160,120,64,0.20);border:1px solid #a07840;color:#a07840;';
+  var btnCancel=document.createElement('button');btnCancel.textContent='Abbrechen';btnCancel.onclick=closeImgEdit;
+  btnCancel.style.cssText='flex:1;padding:8px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:transparent;border:1px solid rgba(0,0,0,0.14);color:#857e79;';
+  btnRow.appendChild(btnSave);btnRow.appendChild(btnCancel);
+  modal.appendChild(h3);modal.appendChild(titleDiv);modal.appendChild(urlInput);modal.appendChild(btnRow);
+  ov.appendChild(modal);document.body.appendChild(ov);
+
+  // Import Overlay
+  var iov=document.createElement('div');
+  iov.id='importOverlay';
+  iov.style.cssText='display:none;position:fixed;inset:0;background:rgba(255,255,255,0.95);z-index:9999;align-items:center;justify-content:center;';
+  var imodal=document.createElement('div');
+  imodal.style.cssText='background:#f0eeea;border:1px solid rgba(0,0,0,0.12);border-radius:10px;padding:28px;width:460px;max-width:90vw;';
+  imodal.innerHTML=`
+    <h3 style="font-family:Gloock,Georgia,serif;font-size:18px;font-weight:400;color:#1a1917;margin:0 0 8px;">JSON Import</h3>
+    <p style="font-size:13px;color:#6b6560;margin:0 0 16px;line-height:1.5;">Wähle eine zuvor exportierte <code>.json</code> Datei. Vorhandene Daten werden ergänzt, nicht überschrieben.</p>
+    <div class="import-dropzone" onclick="document.getElementById('importFileInput').click()">
+      <div style="font-size:28px;margin-bottom:8px;">📂</div>
+      <div style="font-size:13px;color:#857e79;font-family:system-ui,sans-serif;">Klicken zum Auswählen</div>
+    </div>
+    <input type="file" id="importFileInput" accept=".json" onchange="handleImportFile(event)" style="display:none;">
+    <div style="display:flex;gap:10px;">
+      <button onclick="closeImport()" style="flex:1;padding:9px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:transparent;border:1px solid rgba(0,0,0,0.14);color:#857e79;">Abbrechen</button>
+    </div>`;
+  iov.appendChild(imodal);document.body.appendChild(iov);
+})();
+</script>
+
+// ── PERSON MANAGEMENT ─────────────────────────────────────────
+function switchPerson(name){
+  const n=(name||'').trim()||'Standard';
+  currentPerson=n;
+  bpLoad();bpEnsure(n);
+  const pi=document.getElementById('personInput');
+  const ti=document.getElementById('themaInput');
+  if(pi&&pi.value!==n)pi.value=n;
+  if(ti)ti.value=bpData[n].thema||'';
+  renderChips();renderTabs();renderLoci();renderDetail();updateDrillStats();
+}
+function saveThema(){
+  const ti=document.getElementById('themaInput');
+  if(!ti)return;
+  bpEnsure(currentPerson);
+  bpData[currentPerson].thema=ti.value.trim();
+  bpSave();renderChips();
+}
+function renderChips(){
+  const el=document.getElementById('personChips');
+  if(!el)return;
+  const ps=Object.keys(bpData);
+  if(ps.length===0){el.innerHTML='';return;}
+  el.innerHTML=ps.map(p=>{
+    const t=bpData[p].thema?(' &mdash; '+bpData[p].thema):'';
+    return '<button class="pchip'+(p===currentPerson?' active':'')+'" onclick="switchPerson('+JSON.stringify(p)+')">'+p+t+'</button>';
+  }).join('');
+}
+
+// ── NOTES ─────────────────────────────────────────────────────
+function saveNote(){
+  const nf=document.getElementById('noteField');
+  if(!nf)return;
+  bpSetLocus(activeRoom,activeLocus,{note:nf.value});
+  const ns=document.getElementById('noteSaved');
+  if(ns){ns.style.display='inline';setTimeout(()=>ns.style.display='none',1800);}
+}
+function loadNoteIntoField(){
+  const nf=document.getElementById('noteField');
+  if(nf)nf.value=bpGetNote(activeRoom,activeLocus);
+}
+
+// ── IMAGE ──────────────────────────────────────────────────────
+function locusKey(r,l){return 'bmp_img_'+r+'_'+l;}
+function showImage(roomIdx,locusIdx){
+  const img=document.getElementById('locusImg');
+  const msg=document.getElementById('imgMsg');
+  const editBtn=document.getElementById('editImgBtn');
+  const key=roomIdx+'_'+locusIdx;
+  const url=locusImages[key]||localStorage.getItem('bmp_img_'+key);
+  if(img)img.style.display='none';
+  if(msg)msg.style.display='none';
+  if(editBtn)editBtn.style.display='inline-block';
+  if(url){
+    if(img){img.src=url;img.style.display='block';
+      img.onerror=()=>{img.style.display='none';if(msg){msg.textContent='Bild konnte nicht geladen werden.';msg.style.display='block';}};}
+  }else{if(msg){msg.textContent='Kein Bild gespeichert.';msg.style.display='block';}}
+  const iz=document.getElementById('imgZone');
+  if(iz)iz.style.display='block';
+}
+function openImgEdit(){
+  const lName=rooms[activeRoom].loci[activeLocus].n;
+  document.getElementById('imgEditTitle').textContent='Bild für: '+lName;
+  document.getElementById('imgEditUrl').value=localStorage.getItem(locusKey(activeRoom,activeLocus))||'';
+  document.getElementById('imgEditOverlay').style.display='flex';
+}
+function saveImgEdit(){
+  const url=document.getElementById('imgEditUrl').value.trim();
+  const key=locusKey(activeRoom,activeLocus);
+  if(url)localStorage.setItem(key,url);else localStorage.removeItem(key);
+  document.getElementById('imgEditOverlay').style.display='none';
+  showImage(activeRoom,activeLocus);
+}
+function closeImgEdit(){document.getElementById('imgEditOverlay').style.display='none';}
+
+// ── EXPORT / IMPORT ───────────────────────────────────────────
+function exportJSON(){
+  bpLoad();
+  const dataStr=JSON.stringify(bpData,null,2);
+  const blob=new Blob([dataStr],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='body-mind-palace-'+currentPerson+'-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();URL.revokeObjectURL(url);
+}
+function openImport(){
+  document.getElementById('importOverlay').style.display='flex';
+}
+function closeImport(){
+  document.getElementById('importOverlay').style.display='none';
+}
+function handleImportFile(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    try{
+      const imported=JSON.parse(ev.target.result);
+      Object.keys(imported).forEach(p=>{
+        if(!bpData[p])bpData[p]=imported[p];
+        else{
+          bpData[p].thema=imported[p].thema||bpData[p].thema;
+          Object.assign(bpData[p].loci,imported[p].loci);
+        }
+      });
+      bpSave();closeImport();
+      renderChips();renderTabs();renderLoci();renderDetail();updateDrillStats();
+      alert('Import erfolgreich! '+Object.keys(imported).length+' Person(en) geladen.');
+    }catch(err){alert('Fehler beim Importieren: Ungültige JSON-Datei.');}
+  };
+  reader.readAsText(file);
+}
+function exportPerson(){
+  const pd=bpData[currentPerson]||{thema:'',loci:{}};
+  const lines=['Body Mind Palace Export','Person: '+currentPerson];
+  if(pd.thema)lines.push('Thema: '+pd.thema);
+  lines.push('Datum: '+new Date().toLocaleDateString('de-CH'),'');
+  rooms.forEach((room,ri)=>{
+    lines.push('=== '+room.name+' ('+room.body+') ===');
+    room.loci.forEach((locus,li)=>{
+      const ld=pd.loci[ri+'_'+li]||{};
+      lines.push((li+1)+'. '+locus.n,'   Bewertung: '+scoreLabel(ld.score||0),'   Notiz: '+(ld.note||'-'));
+    });lines.push('');
+  });
+  const txt=lines.join('%0A');
+  const sub=encodeURIComponent('Body Mind Palace Export - '+currentPerson);
+  window.open('mailto:?subject='+sub+'&body='+txt,'_self');
+}
+
+// ── PROGRESS HELPERS ──────────────────────────────────────────
+function roomProgress(ri){
+  let scored=0;
+  rooms[ri].loci.forEach((_,li)=>{if(bpGetScore(ri,li)>0)scored++;});
+  return scored;
+}
+function roomAvgScore(ri){
+  let total=0,count=0;
+  rooms[ri].loci.forEach((_,li)=>{const s=bpGetScore(ri,li);if(s>0){total+=s;count++;}});
+  return count?total/count:0;
+}
+function updateDrillStats(){
+  const el=document.getElementById('drillStats');
+  if(!el)return;
+  let totalScored=0,totalSum=0,totalCount=0,weak=0;
+  rooms.forEach((room,ri)=>{
+    room.loci.forEach((_,li)=>{
+      const s=bpGetScore(ri,li);
+      if(s>0){totalScored++;totalSum+=s;totalCount++;}
+      if(s>0&&s<=2)weak++;
+    });
+  });
+  if(totalScored===0){el.style.display='none';return;}
+  el.style.display='flex';
+  const avg=totalCount?totalSum/totalCount:0;
+  el.innerHTML=
+    '<div class="drill-stat"><div class="drill-stat-val">'+totalScored+'<span style="font-size:14px;color:#6b6560">/50</span></div><div class="drill-stat-lbl">Bewertet</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val" style="color:'+scoreColor(Math.round(avg))+'">'+avg.toFixed(1)+'</div><div class="drill-stat-lbl">Ø Bewertung</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val" style="color:#e05555">'+weak+'</div><div class="drill-stat-lbl">Schwache Loci</div></div>'+
+    '<div class="drill-stat"><div class="drill-stat-val" style="color:#a07840">'+Math.round(totalScored/50*100)+'%</div><div class="drill-stat-lbl">Fortschritt</div></div>';
+}
+
+// ── RENDER ────────────────────────────────────────────────────
+const MAP_POS=[[50,82],[18,52],[18,18],[82,18],[82,52]];
 const NODE_COLORS=["#378ADD","#D4537E","#639922","#EF9F27","#9B59B6"];
 
-function renderMap(roomIdx, activeLoci){
-
+function renderMap(roomIdx,activeLoci){
   const map=document.getElementById('roomMap');
-
-  if(!map) return;
-
+  if(!map)return;
   const room=rooms[roomIdx];
-
   if(!room){map.style.display='none';return;}
-
-  map.style.display='block';
-
-  // Build SVG lines
-
   const pts=MAP_POS;
-
   let lines='';
-
-  for(let i=0;i<pts.length;i++){
-
-    const j=(i+1)%pts.length;
-
-    lines+=`<line x1="${pts[i][0]}%" y1="${pts[i][1]}%" x2="${pts[j][0]}%" y2="${pts[j][1]}%" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>`;
-
-  }
-
-  // Build nodes HTML
-
+  for(let i=0;i<pts.length;i++){const j=(i+1)%pts.length;lines+=`<line x1="${pts[i][0]}%" y1="${pts[i][1]}%" x2="${pts[j][0]}%" y2="${pts[j][1]}%" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>`;}
   let nodes='';
-
   for(let i=0;i<room.loci.length;i++){
-
-    const l=room.loci[i];
-
-    const [px,py]=pts[i];
-
-    const color=NODE_COLORS[i];
-
-    const isActive=(i===activeLoci);
-
-    const activeClass=isActive?' active':'';
-
-    nodes+=`<div class="map-node${activeClass}" style="left:${px}%;top:${py}%;position:absolute;transform:translate(-50%,-50%)" onclick="selectLocus(${i})">
-
+    const l=room.loci[i];const[px,py]=pts[i];const color=NODE_COLORS[i];const isActive=(i===activeLoci);
+    nodes+=`<div class="map-node${isActive?' active':''}" style="left:${px}%;top:${py}%;position:absolute;transform:translate(-50%,-50%)" onclick="selectLocus(${i})">
       <div class="map-node-circle" style="border-color:${color};color:${color}${isActive?';background:'+color+';color:#fff':''}">${i+1}</div>
-
       <div class="map-node-label" title="${l.n}">${l.n.length>12?l.n.slice(0,11)+'…':l.n}</div>
-
     </div>`;
-
   }
-
-  map.innerHTML=`
-
-    <div class="room-map-title">${room.name} &mdash; ${room.body}</div>
-
-    <div class="map-canvas" id="mapCanvas">
-
-      <svg>${lines}</svg>
-
-      ${nodes}
-
-    </div>`;
-
+  map.innerHTML=`<div class="room-map-title">${room.name} &mdash; ${room.body}</div>
+    <div class="map-canvas" id="mapCanvas"><svg style="position:absolute;inset:0;width:100%;height:100%;">${lines}</svg>${nodes}</div>`;
 }
 
 function renderDetail(){
-
-  renderMap(activeRoom, activeLocus);
-
+  renderMap(activeRoom,activeLocus);
   const l=rooms[activeRoom].loci[activeLocus];
-
+  const sc=bpGetScore(activeRoom,activeLocus);
   const stags=l.senses.map(s=>`<span class="stag" style="border-color:${SC[s]}55;color:${SC[s]};background:${SC[s]}11">${s}</span>`).join('');
-
+  const scoreBadge=sc?`<span style="font-size:11px;font-weight:700;color:${scoreColor(sc)};background:${scoreColor(sc)}18;border:1px solid ${scoreColor(sc)}44;border-radius:10px;padding:2px 9px;font-family:system-ui,sans-serif;margin-left:8px;">${scoreLabel(sc)}</span>`:'';
   document.getElementById('detBody').innerHTML=`
-
-    <div class="det-name">${l.n}</div>
-
+    <div class="det-name">${l.n}${scoreBadge}</div>
     <div class="det-pos">${POS[activeLocus]} — ${POSDIR[activeLocus]}</div>
-
     <div class="sense-row">${stags}</div>
-
     <div class="det-anchor">${l.anchor}</div>
-
-    <div class="det-transform"><span class="tl">Person-Transformation</span>${l.transform}</div><div class="note-section"><label>Meine Notiz</label><textarea class="note-field" id="noteField" placeholder="Was habe ich hier gelernt..." onblur="saveNote()"></textarea><div class="note-saved" id="noteSaved">Gespeichert</div></div>`;
-
+    <div class="det-transform"><span class="tl">Person-Transformation</span>${l.transform}</div>
+    <div class="note-section"><label>Meine Notiz</label>
+    <textarea class="note-field" id="noteField" placeholder="Was habe ich hier gelernt..." onblur="saveNote()"></textarea>
+    <span class="note-saved" id="noteSaved" style="display:none;">Gespeichert ✓</span></div>`;
   showImage(activeRoom,activeLocus);loadNoteIntoField();
-
 }
 
 function renderLoci(){
-
   const ll=document.getElementById('lociList');
-
+  if(!ll)return;
   ll.innerHTML='';
-
   rooms[activeRoom].loci.forEach((l,i)=>{
-
+    const sc=bpGetScore(activeRoom,i);
     const div=document.createElement('div');
-
     div.className='lc'+(i===activeLocus?' sel':'');
-
-    div.innerHTML=`<div class="lc-num" style="background:${COLS[i]}22;color:${COLS[i]};border:0.5px solid ${COLS[i]}55">${i+1}</div>
-
-      <div class="lc-info"><div class="lc-name">${l.n}</div><div class="lc-pos">${POS[i]}</div></div>`;
-
+    const progressBar=sc?`<div class="lc-progress-bar" style="width:${sc/5*100}%;background:${scoreColor(sc)};"></div>`:'';
+    div.innerHTML=`${progressBar}
+      <div class="lc-num" style="background:${COLS[i]}22;color:${COLS[i]};border:0.5px solid ${COLS[i]}55">${i+1}</div>
+      <div class="lc-info"><div class="lc-name">${l.n}</div><div class="lc-pos">${POS[i]}</div></div>
+      ${sc?'<div class="lc-score" style="color:'+scoreColor(sc)+'">'+sc+'/5</div>':''}`;
     div.onclick=()=>{activeLocus=i;renderLoci();renderDetail();};
-
     ll.appendChild(div);
-
   });
-
 }
+
+function selectLocus(i){activeLocus=i;renderLoci();renderDetail();}
 
 function renderTabs(){
-
   const t=document.getElementById('tabs');
-
+  if(!t)return;
   t.innerHTML='';
-
   rooms.forEach((r,i)=>{
-
+    const scored=roomProgress(i);
+    const pct=scored/5*100;
     const b=document.createElement('button');
-
     b.className='rtab'+(i===activeRoom?' on':'');
-
-    b.innerHTML='<span class="rtab-name">'+r.name+'</span><span class="rtab-body">'+r.body+'</span>';
-
+    b.innerHTML='<span class="rtab-name">'+r.name+'</span><span class="rtab-body">'+r.body+'</span>'+(scored>0?'<div class="rtab-progress"><div class="rtab-progress-fill" style="width:'+pct+'%"></div></div>':'');
     b.onclick=()=>{activeRoom=i;activeLocus=0;bpLoad();bpEnsure(currentPerson);renderChips();renderTabs();renderLoci();renderDetail();};
-
     t.appendChild(b);
-
   });
-
 }
-
-renderTabs();
-
-renderLoci();
-
-// Fix: show imgZone wrapper when showImage() is called
-
-(function(){
-
-  var _orig=showImage;
-
-  window.showImage=function(r,l){
-
-    _orig(r,l);
-
-    var iz=document.getElementById('imgZone');
-
-    var li=document.getElementById('locusImg');
-
-    if(iz&&li) iz.style.display=(li.style.display!=='none'&&li.src)?'block':'none';
-
-  };
-
-})();
-
-// Create imgEditOverlay dynamically (avoids WordPress DOM restructuring)
-
-(function createOverlay(){
-
-  var ov=document.createElement('div');
-
-  ov.id='imgEditOverlay';
-
-  ov.style.cssText='display:none;position:fixed;inset:0;background:rgba(255,255,255,0.95);z-index:9999;align-items:center;justify-content:center;';
-
-  
-
-  var modal=document.createElement('div');
-
-  modal.style.cssText='background:#f0eeea;border:1px solid rgba(0,0,0,0.12);border-radius:10px;padding:28px;width:420px;max-width:90vw;';
-
-  
-
-  var h3=document.createElement('h3');
-
-  h3.textContent='Bild bearbeiten';
-
-  h3.style.cssText='font-family:Gloock,Georgia,serif;font-size:18px;font-weight:400;color:#1a1917;margin:0 0 14px;';
-
-  
-
-  var titleDiv=document.createElement('div');
-
-  titleDiv.id='imgEditTitle';
-
-  titleDiv.style.cssText='font-size:12px;color:#6b6560;margin-bottom:10px;font-style:italic;';
-
-  
-
-  var urlInput=document.createElement('input');
-
-  urlInput.type='text';
-
-  urlInput.id='imgEditUrl';
-
-  urlInput.placeholder='Bild-URL eingeben...';
-
-  urlInput.style.cssText='width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.12);border-radius:5px;padding:9px 12px;color:#1a1917;font-size:13px;font-family:Lora,Georgia,serif;outline:none;margin-bottom:12px;box-sizing:border-box;';
-
-  urlInput.addEventListener('focus',function(){this.style.borderColor='#a07840';});
-
-  urlInput.addEventListener('blur',function(){this.style.borderColor='rgba(0,0,0,0.12)';});
-
-  
-
-  var btnRow=document.createElement('div');
-
-  btnRow.style.cssText='display:flex;gap:10px;';
-
-  
-
-  var btnSave=document.createElement('button');
-
-  btnSave.textContent='Speichern';
-
-  btnSave.onclick=saveImgEdit;
-
-  btnSave.style.cssText='flex:1;padding:8px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:rgba(160,120,64,0.20);border:1px solid #a07840;color:#a07840;';
-
-  
-
-  var btnCancel=document.createElement('button');
-
-  btnCancel.textContent='Abbrechen';
-
-  btnCancel.onclick=closeImgEdit;
-
-  btnCancel.style.cssText='flex:1;padding:8px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:transparent;border:1px solid rgba(0,0,0,0.14);color:#857e79;';
-
-  
-
-  btnRow.appendChild(btnSave);
-
-  btnRow.appendChild(btnCancel);
-
-  modal.appendChild(h3);
-
-  modal.appendChild(titleDiv);
-
-  modal.appendChild(urlInput);
-
-  modal.appendChild(btnRow);
-
-  ov.appendChild(modal);
-
-  document.body.appendChild(ov);
-
-})();
-
-</script>
