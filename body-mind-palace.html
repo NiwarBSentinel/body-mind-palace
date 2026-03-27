@@ -480,6 +480,8 @@
 </div>
 
 <script>
+(function(){
+
 if(window._bmpLoaded)return; window._bmpLoaded=true;
 var SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
 var COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
@@ -1250,6 +1252,8 @@ updateDrillStats();
       <button onclick="closeImport()" style="flex:1;padding:9px;border-radius:5px;font-size:13px;font-family:system-ui,sans-serif;cursor:pointer;background:transparent;border:1px solid rgba(0,0,0,0.14);color:#857e79;">Abbrechen</button>
     </div>`;
   iov.appendChild(imodal);document.body.appendChild(iov);
+})();
+
 })();
 </script>
  
