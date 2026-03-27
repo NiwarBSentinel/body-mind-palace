@@ -1099,7 +1099,7 @@ function renderDrillCard(){
       <span class="drill-room-label">${room.name} · ${room.body}</span>
       <button class="drill-close-btn" onclick="closeDrill()">✕</button>
     </div>
-    <div class="drill-img-wrap">
+    <div class="drill-img-wrap" style="height:180px;max-height:180px;overflow:hidden;">
       ${imgHtml}
       <div class="drill-num-badge" style="border-color:${color};color:${color};background:${color}22">${li+1}</div>
     </div>
