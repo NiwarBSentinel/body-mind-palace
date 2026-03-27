@@ -480,12 +480,13 @@
 </div>
 
 <script>
-const SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
-const COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
-const POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
-const POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
+if(window._bmpLoaded)return; window._bmpLoaded=true;
+var SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
+var COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
+var POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
+var POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
 
-const rooms=[
+var rooms=[
 {name:"Bibliothek",body:"Kopfdecke",loci:[
 {n:"Rotierender Globus",q:"antique globe",senses:["Sicht","Gehör","Tastsinn"],anchor:"Dreht sich langsam, leuchtet von innen warm-orange. Tiefes Brummen das die Brust vibrieren lässt. Meridianlinien aus Metall — eiskalt beim Anfassen.",transform:"Deine Person greift den Globus — er dreht sich zu einem Ort der mit ihr verknüpft ist."},
 {n:"Schmiedeeisen-Wendeltreppe",q:"spiral staircase iron",senses:["Gehör","Tastsinn","Gleichgewicht"],anchor:"Jede Stufe vibriert unter dem Gewicht. Handlauf an einer Stelle abgenutzt — exakt dort greifst du immer.",transform:"Deine Person steigt hinab — die Treppe klingt anders mit jedem ihrer Schritte."},
@@ -558,10 +559,10 @@ const rooms=[
 ]}
 ];
 
-let activeRoom=0, activeLocus=0;
+var activeRoom=0, activeLocus=0;
 
 // ── IMAGE STORE ──
-const locusImages={
+var locusImages={
   "0_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_1.png",
   "0_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_2.png",
   "0_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_3.png",
@@ -615,9 +616,9 @@ const locusImages={
 };
 
 // ── DATA LAYER ──
-const DATA_KEY='bodypalace_data';
-let currentPerson='Standard';
-let bpData={};
+var DATA_KEY='bodypalace_data';
+var currentPerson='Standard';
+var bpData={};
 
 function bpLoad(){try{bpData=JSON.parse(localStorage.getItem(DATA_KEY)||'{}');}catch(e){bpData={};}}
 function bpSave(){localStorage.setItem(DATA_KEY,JSON.stringify(bpData));}
@@ -799,8 +800,8 @@ function saveImgEdit(){
 function closeImgEdit(){document.getElementById('imgEditOverlay').style.display='none';}
 
 // ── ROOM MAP ──
-const MAP_POS=[[50,82],[18,52],[18,18],[82,18],[82,52]];
-const NODE_COLORS=["#378ADD","#D4537E","#639922","#EF9F27","#9B59B6"];
+var MAP_POS=[[50,82],[18,52],[18,18],[82,18],[82,52]];
+var NODE_COLORS=["#378ADD","#D4537E","#639922","#EF9F27","#9B59B6"];
 function renderMap(roomIdx,activeLoci){
   const map=document.getElementById('roomMap');
   if(!map)return;
@@ -884,12 +885,12 @@ function renderTabs(){
 
 function selectLocus(i){activeLocus=i;renderLoci();renderDetail();}
 
-const SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
-const COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
-const POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
-const POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
+var SC={Sicht:"#378ADD",Gehör:"#D4537E",Tastsinn:"#639922",Geruch:"#EF9F27",Gleichgewicht:"#1D9E75"};
+var COLS=['#378ADD','#D4537E','#639922','#EF9F27','#1D9E75'];
+var POS=["Eingang","Linke Wand","Linke Ecke hinten","Rechte Ecke hinten","Rechte Wand"];
+var POSDIR=["Direkt beim Eintreten","Linke Seite, Schulterhöhe","Hintere linke Ecke","Hintere rechte Ecke","Rechte Seite, Rückweg"];
 
-const rooms=[
+var rooms=[
 {name:"Bibliothek",body:"Kopfdecke",loci:[
 {n:"Rotierender Globus",q:"antique globe",senses:["Sicht","Gehör","Tastsinn"],anchor:"Dreht sich langsam, leuchtet von innen warm-orange. Tiefes Brummen das die Brust vibrieren lässt. Meridianlinien aus Metall — eiskalt beim Anfassen.",transform:"Deine Person greift den Globus — er dreht sich zu einem Ort der mit ihr verknüpft ist."},
 {n:"Schmiedeeisen-Wendeltreppe",q:"spiral staircase iron",senses:["Gehör","Tastsinn","Gleichgewicht"],anchor:"Jede Stufe vibriert unter dem Gewicht. Handlauf an einer Stelle abgenutzt — exakt dort greifst du immer.",transform:"Deine Person steigt hinab — die Treppe klingt anders mit jedem ihrer Schritte."},
@@ -962,7 +963,7 @@ const rooms=[
 ]}
 ];
 
-const locusImages={
+var locusImages={
 "0_0":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_1.png",
 "0_1":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_2.png",
 "0_2":"https://niwar-barzani.ch/wp-content/uploads/2026/03/Bibliothek_3.png",
@@ -1016,10 +1017,10 @@ const locusImages={
 };
 
 // ── STATE ──────────────────────────────────────────────────────
-let activeRoom=0, activeLocus=0;
-const DATA_KEY='bodypalace_data';
-let currentPerson='Standard';
-let bpData={};
+var activeRoom=0, activeLocus=0;
+var DATA_KEY='bodypalace_data';
+var currentPerson='Standard';
+var bpData={};
 
 function bpLoad(){try{bpData=JSON.parse(localStorage.getItem(DATA_KEY)||'{}');}catch(e){bpData={};}}
 function bpSave(){localStorage.setItem(DATA_KEY,JSON.stringify(bpData));}
@@ -1039,7 +1040,7 @@ function scoreLabel(s){
 }
 
 // ── DRILL MODE ──
-let drillQueue=[], drillIdx=0, drillRevealed=false;
+var drillQueue=[], drillIdx=0, drillRevealed=false;
 
 function buildDrillQueue(){
   // Sort by score ascending (weakest first), unscored first
@@ -1251,3 +1252,4 @@ updateDrillStats();
   iov.appendChild(imodal);document.body.appendChild(iov);
 })();
 </script>
+ 
